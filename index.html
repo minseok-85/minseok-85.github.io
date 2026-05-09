@@ -28,7 +28,7 @@
     background: var(--bg);
     color: var(--text);
     font-family: var(--font-sans);
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.6;
   }
 
@@ -73,13 +73,13 @@
 
   .sidebar-name {
     font-family: var(--font-serif);
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
     margin-bottom: 4px;
   }
 
   .sidebar-role {
-    font-size: 12px;
+    font-size: 14px;
     color: var(--muted);
     margin-bottom: 1.5rem;
     line-height: 1.5;
@@ -97,9 +97,9 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 12.5px;
+    font-size: 14px;
     color: var(--muted);
-    padding: 7px 10px;
+    padding: 8px 10px;
     border-radius: 6px;
     transition: background 0.15s, color 0.15s;
     text-decoration: none;
@@ -136,10 +136,10 @@
   }
 
   .nav-item {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 500;
     color: var(--muted);
-    padding: 0 16px;
+    padding: 0 18px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -177,12 +177,12 @@
     margin-bottom: 0.75rem;
   }
 
-  .about-band p { font-size: 14px; color: var(--muted); line-height: 1.8; }
+  .about-band p { font-size: 16px; color: var(--muted); line-height: 1.8; }
   .about-band p strong { color: var(--text); font-weight: 600; }
 
   /* SECTION LABEL */
   .section-label {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -206,7 +206,8 @@
     transition: box-shadow 0.2s, transform 0.2s;
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
 
   .project-card:hover {
@@ -215,16 +216,17 @@
     text-decoration: none;
   }
 
-  /* Image slot */
+  /* Image slot — 4:3 ratio */
   .card-img {
     width: 100%;
-    height: 155px;
+    aspect-ratio: 4 / 3;
     background: var(--bg);
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    flex-shrink: 0;
   }
 
   .card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -253,12 +255,12 @@
   .card-body { padding: 14px 16px; }
 
   .card-badge {
-    font-size: 10px;
+    font-size: 11px;
     font-family: var(--font-mono);
     font-weight: 500;
     padding: 2px 8px;
     border-radius: 3px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     display: inline-block;
   }
 
@@ -266,13 +268,13 @@
   .badge-review   { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
   .badge-progress { background: var(--bg); color: var(--subtle); border: 1px solid var(--border); }
 
-  .card-title { font-size: 13px; font-weight: 600; line-height: 1.4; margin-bottom: 5px; }
-  .card-desc  { font-size: 12px; color: var(--muted); line-height: 1.55; margin-bottom: 10px; }
+  .card-title { font-size: 15px; font-weight: 600; line-height: 1.35; margin-bottom: 4px; }
+  .card-desc  { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 8px; }
 
   .card-chips { display: flex; flex-wrap: wrap; gap: 4px; }
 
   .chip {
-    font-size: 10px;
+    font-size: 11px;
     font-family: var(--font-mono);
     padding: 2px 7px;
     border-radius: 3px;
