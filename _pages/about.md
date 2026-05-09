@@ -16,7 +16,6 @@ I am applying for PhD programs in Fall 2027.
 
 ## Research Highlights
 
-```- Hierarchical UAV path planning with sensor dropout mitigation — *under review*```
 - End-to-end RL autonomous flight simulation (Crazyflie, PyBullet)
 - Entropy-augmented CNN for fault diagnosis — accepted at **ASME IMECE 2026**
 
