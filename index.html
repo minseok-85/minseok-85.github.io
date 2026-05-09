@@ -54,7 +54,7 @@
   }
 
   .avatar {
-    width: 120px; height: 120px;
+    width: 204px; height: 204px;
     border-radius: 50%;
     border: 3px solid var(--border);
     margin-bottom: 1rem;
@@ -294,7 +294,11 @@
     display: flex;
     gap: 16px;
     align-items: flex-start;
+    transition: box-shadow 0.2s;
+    cursor: pointer;
   }
+
+  .pub-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
 
   .pub-thumb {
     width: 80px; height: 60px;
@@ -546,7 +550,9 @@
         <div class="section-label" style="margin-bottom:1.2rem">Publications</div>
         <div class="pub-list">
 
-          <div class="pub-card">
+          <!-- ENTROPY CNN: href에 논문 PDF 링크를 넣으세요
+               예: href="files/entropy-cnn.pdf" -->
+          <a class="pub-card" href="#" target="_blank" style="text-decoration:none; color:inherit; display:flex; gap:16px; align-items:flex-start;">
             <div class="pub-thumb">
               <!-- <img src="images/entropy-thumb.png" alt=""> -->
               img
@@ -556,10 +562,10 @@
               <div class="pub-venue">Park M., Yang C.X., Hu J. · ASME IMECE 2026 · 1st Author</div>
               <div class="pub-links">
                 <span class="card-badge badge-accepted" style="font-size:10px;padding:2px 8px;margin:0">Accepted</span>
-                <a class="pub-link disabled" href="#">PDF (coming soon)</a>
+                <span class="pub-link disabled">PDF (coming soon)</span>
               </div>
             </div>
-          </div>
+          </a>
 
           <!-- HIERARCHICAL UAV PATH PLANNING — commented out until paper is ready
           <div class="pub-card">
