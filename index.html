@@ -216,7 +216,7 @@
     text-decoration: none;
   }
 
-  /* Image slot — 4:3 ratio */
+  /* Image slot — 16:9 ratio */
   .card-img {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -395,7 +395,7 @@
     <!-- Option A (no photo yet): keep as-is, shows initials -->
     <!-- Option B (with photo): replace the div below with:
          <div class="avatar"><img src="images/profile.jpg" alt="Minseok Park"></div> -->
-    <div class="avatar">MP</div>
+    <div class="avatar"><img src="images/profile.png" alt="Minseok Park"></div>
 
     <div class="sidebar-name">Minseok Park</div>
     <div class="sidebar-role">Undergraduate Researcher<br>Hanyang Univ. · UND</div>
@@ -473,7 +473,9 @@
           </a>
           -->
 
-          <a class="project-card" href="#" onclick="showTab('publications',document.querySelectorAll('.nav-item')[1]);return false;">
+          <!-- ENTROPY CNN: href에 논문 PDF 또는 GitHub 링크를 넣으세요
+               예: href="files/entropy-cnn.pdf" 또는 href="https://github.com/minseok-85/repo" -->
+          <a class="project-card" href="#" target="_blank">
             <div class="card-img">
               <!-- <img src="images/entropy-cnn.png" alt="Entropy CNN"> -->
               <div class="card-img-placeholder">
@@ -493,7 +495,9 @@
             </div>
           </a>
 
-          <a class="project-card" href="#" onclick="showTab('projects',document.querySelectorAll('.nav-item')[2]);return false;">
+          <!-- CRAZYFLIE: href에 GitHub 링크를 넣으세요
+               예: href="https://github.com/minseok-85/crazyflie-rl" -->
+          <a class="project-card" href="#" target="_blank">
             <div class="card-img">
               <!-- <img src="images/crazyflie.png" alt="Crazyflie RL"> -->
               <div class="card-img-placeholder">
@@ -513,7 +517,9 @@
             </div>
           </a>
 
-          <a class="project-card" href="#" onclick="showTab('projects',document.querySelectorAll('.nav-item')[2]);return false;">
+          <!-- DEEPSKELETON: href에 GitHub 링크를 넣으세요
+               예: href="https://github.com/minseok-85/deepskeleton" -->
+          <a class="project-card" href="#" target="_blank">
             <div class="card-img">
               <!-- <img src="images/skeleton.png" alt="DeepSkeleton"> -->
               <div class="card-img-placeholder">
