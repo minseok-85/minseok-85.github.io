@@ -23,7 +23,7 @@ repository               : "minseok-85/minseok-85.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "images/Minseok_Park_25.jpg"
+  avatar           : "images/profile.png"
   name             : "Minseok Park"
   pronouns         : "He/him/his"  
   bio              : "B.S. Hanyang Univ. | UND Exchange Research"
