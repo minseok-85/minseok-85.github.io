@@ -54,7 +54,8 @@
   }
 
   .avatar {
-    width: 204px; height: 204px;
+    width: clamp(120px, 14vw, 204px);
+    height: clamp(120px, 14vw, 204px);
     border-radius: 50%;
     border: 3px solid var(--border);
     margin-bottom: 1rem;
@@ -498,13 +499,10 @@
         <div class="about-band">
           <h2>About me</h2>
           <p>
-            I am an undergraduate researcher at <strong>Hanyang University</strong>
-            (B.S. Convergence Electronic Engineering, expected Feb 2027),
-            and a visiting researcher at the <strong>University of North Dakota</strong>
-            under Prof. Jueming Hu (Jan–May 2026).
-            My research focuses on <strong>robust UAV path planning</strong>
-            and <strong>safe autonomous navigation</strong> under sensor uncertainty.
-            Applying for PhD programs, <strong>Fall 2027</strong>.
+           I am an undergraduate researcher at <strong>Hanyang University</strong> (B.S. Convergence Electronic Engineering, expected Feb 2027),
+           and an exchange student and undergraduate researcher at the <strong>University of North Dakota</strong> under Prof. Jueming Hu (Jan–May 2026).
+           My research focuses on <strong>robust UAV path planning</strong> and <strong>autonomous navigation under sensor dropout conditions</strong>,
+           combining Reinforcement Learning and Imitation Learning. I am applying for PhD programs in <strong>Fall 2027</strong>.
           </p>
         </div>
 
