@@ -18,7 +18,7 @@
     --subtle: #9a9a9a;
     --accent: #2563a8;
     --accent-light: #eef3fb;
-    --sidebar-w: 320px;
+    --sidebar-w: clamp(220px, 22vw, 320px);
     --font-sans: 'Source Sans 3', sans-serif;
     --font-serif: 'Source Serif 4', serif;
     --font-mono: 'JetBrains Mono', monospace;
@@ -388,7 +388,7 @@
   }
 
   /* ── MOBILE ── */
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
 
     .layout { flex-direction: column; }
 
