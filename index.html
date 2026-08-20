@@ -657,26 +657,25 @@ const projects = {
     badge: '<span class="card-badge badge-preparation">In Preparation</span>',
     title: 'Resilient UAV Navigation under Sensor Dropout',
     meta: 'University of North Dakota · Jan 2026 – Present',
-    goal: 'Designed and trained a UAV navigation policy capable of maintaining robust flight performance under intermittent sensor dropout conditions, simulating real-world GPS-denied or sensor-failure environments.',
-    detail: 'Built a two-layer hierarchical architecture combining high-level path planning with a low-level RL-based execution policy. Applied Behavior Cloning and Decision Transformer for imitation learning, and integrated a remasking mechanism to handle missing sensor inputs during inference. Achieved 91–95% task completion rate, outperforming baseline models under sensor failure conditions.',
-    status: 'Manuscript in preparation, targeting IEEE RA-L.',
-    chips: ['Reinforcement Learning', 'Imitation Learning', 'Decision Transformer', 'Behavior Cloning', 'PyBullet', 'Sensor Dropout']
+    goal: 'To be updated',
+    detail: 'To be updated',
+    status: 'Manuscript in preparation',
+    chips: ['Reinforcement Learning', 'Imitation Learning', 'PyBullet', 'Sensor Dropout']
   },
   eacnn: {
     badge: '<span class="card-badge badge-accepted">Accepted · ASME IMECE 2026</span>',
     title: 'Robust Fault Diagnosis of Rotating Machinery via Entropy-Augmented CNN',
     meta: 'University of North Dakota · Jan – May 2026',
-    goal: 'Developed a fault detection framework that classifies rotating machinery conditions using entropy-based signal features and a CNN classifier, with speed-invariant performance.',
-    detail: 'Extracted Multiscale Sample Entropy (MSE) from time-domain signals and Shannon Spectral Entropy (SSE) from frequency-domain signals to generate 24 combined features. These features were fed into a CNN classifier achieving over 95% accuracy across three different rotational speeds, demonstrating robustness to operating condition changes.',
-    status: 'Accepted at ASME International Mechanical Engineering Congress and Exposition (IMECE) 2026.',
+    goal: 'Developed a fault detection framework for rotating machinery using entropy-based feature extraction and CNN classification to identify mechanical faults including unbalance and misalignment.',
+    detail: 'In the time domain, Multiscale Sample Entropy (MSE) features are extracted and fed into a CNN classifier. In the frequency domain, raw signals are passed through a separate CNN, then Shannon Spectral Entropy (SSE) features are extracted and concatenated with the CNN output before final classification. The combined framework achieved over 95% classification accuracy across three different rotational speeds.',
     chips: ['CNN', 'Signal Processing', 'Entropy Features', 'PyTorch', 'Fault Diagnosis']
   },
   crazyflie: {
     badge: '<span class="card-badge badge-completed">Completed</span>',
     title: 'End-to-End RL-Based UAV Waypoint Navigation',
     meta: 'University of North Dakota · Jan – May 2026',
-    goal: 'Built an end-to-end reinforcement learning environment simulating Crazyflie UAV dynamics in PyBullet to train a navigation policy for waypoint tracking.',
-    detail: 'Extended an existing circular path-following model by introducing target state augmentation, enabling the agent to navigate toward single fixed goals and sequentially track two randomly placed waypoints. Trained using PPO and evaluated in simulation. Demonstrated at an oral presentation.',
+    goal: 'Developed an end-to-end RL-based navigation controller for Crazyflie UAV simulation, enabling single-waypoint and multi-waypoint goal tracking.',
+    detail: 'Augmented the state space of an existing circular path-following model to support goal-directed flight. Implemented single-waypoint hovering and multi-waypoint navigation, where a drone spawning at the center sequentially visits two randomly placed waypoints, hovering at each for a set duration.',
     status: 'Completed.',
     chips: ['PPO', 'PyBullet', 'OpenAI Gym', 'Crazyflie Simulation', 'Waypoint Navigation']
   },
@@ -684,8 +683,8 @@ const projects = {
     badge: '<span class="card-badge badge-completed">Completed</span>',
     title: 'Skeleton Detection & Thickness Estimation via Multi-Task CNN',
     meta: 'University of North Dakota · Jan – May 2026',
-    goal: 'Analyzed and optimized a PyTorch implementation of the DeepSkeleton algorithm to simultaneously extract object skeletons and predict structural thickness from natural images.',
-    detail: 'Implemented a multi-task CNN based on the VGG16 backbone with scale-associated side outputs performing two tasks: skeleton localization (classification) and scale/thickness prediction (regression). Optimized the post-processing pipeline to improve output quality. Results were presented at an oral session.',
+    goal: 'Reproduced the DeepSkeleton algorithm to analyze its multi-task CNN architecture for skeleton localization and scale prediction from natural images.',
+    detail: 'Debugged and ran the existing codebase to successfully extract object skeletons using the SK506 dataset. Presented the algorithm architecture and data processing pipeline a biweekly lab meeting.',
     status: 'Completed.',
     chips: ['Multi-task CNN', 'VGG16', 'Skeleton Detection', 'Thickness Estimation', 'PyTorch']
   },
