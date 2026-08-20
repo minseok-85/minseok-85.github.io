@@ -65,75 +65,32 @@
     flex-shrink: 0;
   }
   .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .sidebar-name {
-    font-family: var(--font-serif);
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-  .sidebar-role {
-    font-size: 14px;
-    color: var(--muted);
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
-  }
-  .sidebar-links {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    margin-bottom: 1.5rem;
-  }
+  .sidebar-name { font-family: var(--font-serif); font-size: 22px; font-weight: 600; margin-bottom: 4px; }
+  .sidebar-role { font-size: 14px; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.5; }
+  .sidebar-links { width: 100%; display: flex; flex-direction: column; gap: 4px; margin-bottom: 1.5rem; }
   .sidebar-link {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    color: var(--muted);
-    padding: 8px 10px;
-    border-radius: 6px;
-    transition: background 0.15s, color 0.15s;
-    text-decoration: none;
+    display: flex; align-items: center; gap: 8px;
+    font-size: 14px; color: var(--muted);
+    padding: 8px 10px; border-radius: 6px;
+    transition: background 0.15s, color 0.15s; text-decoration: none;
   }
   .sidebar-link:hover { background: var(--accent-light); color: var(--accent); text-decoration: none; }
-  .sidebar-link svg {
-    width: 15px; height: 15px;
-    flex-shrink: 0;
-    stroke: currentColor;
-    fill: none;
-    stroke-width: 1.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-  .sidebar-divider { width: 100%; height: 1px; background: var(--border); margin: 1rem 0; }
+  .sidebar-link svg { width: 15px; height: 15px; flex-shrink: 0; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
   /* MAIN */
   .main { margin-left: var(--sidebar-w); flex: 1; display: flex; flex-direction: column; }
 
   /* TOPNAV */
   .topnav {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    padding: 0 2rem;
-    height: 48px;
-    position: sticky;
-    top: 0;
-    z-index: 50;
+    background: var(--surface); border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; padding: 0 2rem;
+    height: 48px; position: sticky; top: 0; z-index: 50;
   }
   .nav-item {
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--muted);
-    padding: 0 18px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    border-bottom: 2px solid transparent;
-    cursor: pointer;
-    transition: color 0.15s, border-color 0.15s;
-    text-decoration: none;
+    font-size: 15px; font-weight: 500; color: var(--muted);
+    padding: 0 18px; height: 100%; display: flex; align-items: center;
+    border-bottom: 2px solid transparent; cursor: pointer;
+    transition: color 0.15s, border-color 0.15s; text-decoration: none;
   }
   .nav-item:hover { color: var(--text); text-decoration: none; }
   .nav-item.active { color: var(--accent); border-bottom-color: var(--accent); }
@@ -145,157 +102,77 @@
 
   /* ABOUT BAND */
   .about-band {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.75rem 2rem;
-    margin-bottom: 2rem;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.75rem 2rem; margin-bottom: 2rem;
   }
   .about-band h2 {
-    font-family: var(--font-sans);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--subtle);
-    margin-bottom: 0.75rem;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--subtle); margin-bottom: 0.75rem;
   }
   .about-band p { font-size: 16px; color: var(--muted); line-height: 1.8; }
   .about-band p strong { color: var(--text); font-weight: 600; }
 
   /* SECTION LABEL */
   .section-label {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--subtle);
-    margin-bottom: 1rem;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--subtle); margin-bottom: 1rem;
   }
 
   /* PROJECT GRID */
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
-  }
+  .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+
   .project-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; overflow: hidden; cursor: pointer;
     transition: box-shadow 0.2s, transform 0.2s;
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
+    color: inherit; display: flex; flex-direction: column;
   }
-  .project-card:hover {
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    transform: translateY(-2px);
-    text-decoration: none;
-  }
+  .project-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); transform: translateY(-2px); }
+
   .card-img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background: #ffffff;
+    width: 100%; aspect-ratio: 16 / 9; background: #ffffff;
     border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; flex-shrink: 0;
   }
   .card-img img { width: 100%; height: 100%; object-fit: contain; display: block; }
-  .card-img-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-  .card-img-placeholder svg {
-    width: 32px; height: 32px;
-    stroke: #d0cdc8;
-    fill: none;
-    stroke-width: 1.5;
-    stroke-linecap: round;
-  }
-  .card-img-placeholder span {
-    font-size: 11px;
-    font-family: var(--font-mono);
-    color: #c0bdb8;
-  }
+  .card-img-placeholder { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .card-img-placeholder svg { width: 32px; height: 32px; stroke: #d0cdc8; fill: none; stroke-width: 1.5; stroke-linecap: round; }
+  .card-img-placeholder span { font-size: 11px; font-family: var(--font-mono); color: #c0bdb8; }
   .card-body { padding: 14px 16px; }
+
   .card-badge {
-    font-size: 11px;
-    font-family: var(--font-mono);
-    font-weight: 500;
-    padding: 2px 8px;
-    border-radius: 3px;
-    margin-bottom: 6px;
-    display: inline-block;
+    font-size: 11px; font-family: var(--font-mono); font-weight: 500;
+    padding: 2px 8px; border-radius: 3px; margin-bottom: 6px; display: inline-block;
   }
-  .badge-accepted  { background: #ecfdf5; color: #166534; border: 1px solid #bbf7d0; }
-  .badge-review    { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
-  .badge-progress  { background: var(--bg); color: var(--subtle); border: 1px solid var(--border); }
-  .badge-completed { background: #f0f9ff; color: #0369a1; border: 1px solid #bae6fd; }
+  .badge-accepted    { background: #ecfdf5; color: #166534; border: 1px solid #bbf7d0; }
+  .badge-review      { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+  .badge-progress    { background: var(--bg); color: var(--subtle); border: 1px solid var(--border); }
+  .badge-completed   { background: #f0f9ff; color: #0369a1; border: 1px solid #bae6fd; }
   .badge-preparation { background: #fdf4ff; color: #7e22ce; border: 1px solid #e9d5ff; }
+
   .card-title { font-size: 15px; font-weight: 600; line-height: 1.35; margin-bottom: 4px; }
   .card-desc  { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 8px; }
   .card-chips { display: flex; flex-wrap: wrap; gap: 4px; }
-  .chip {
-    font-size: 11px;
-    font-family: var(--font-mono);
-    padding: 2px 7px;
-    border-radius: 3px;
-    background: var(--bg);
-    color: var(--subtle);
-    border: 1px solid var(--border);
-  }
+  .chip { font-size: 11px; font-family: var(--font-mono); padding: 2px 7px; border-radius: 3px; background: var(--bg); color: var(--subtle); border: 1px solid var(--border); }
 
   /* PUBLICATIONS */
   .pub-list { display: flex; flex-direction: column; gap: 12px; }
   .pub-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 18px 20px;
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    transition: box-shadow 0.2s;
-    cursor: pointer;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px 20px;
+    display: flex; gap: 16px; align-items: flex-start;
+    transition: box-shadow 0.2s; cursor: pointer;
   }
   .pub-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
-  .pub-thumb {
-    width: 80px; height: 60px;
-    border-radius: 6px;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    flex-shrink: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    font-family: var(--font-mono);
-    color: #ccc;
-  }
-  .pub-thumb img { width: 100%; height: 100%; object-fit: contain; }
   .pub-info { flex: 1; }
   .pub-title-text { font-size: 13.5px; font-weight: 600; line-height: 1.4; margin-bottom: 4px; }
   .pub-venue { font-size: 11.5px; color: var(--muted); margin-bottom: 10px; font-family: var(--font-mono); }
   .pub-links { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
   .pub-link {
-    font-size: 11px;
-    font-family: var(--font-mono);
-    color: var(--accent);
-    background: var(--accent-light);
-    border: 1px solid #bfdbfe;
-    padding: 3px 10px;
-    border-radius: 4px;
-    text-decoration: none;
+    font-size: 11px; font-family: var(--font-mono);
+    color: var(--accent); background: var(--accent-light);
+    border: 1px solid #bfdbfe; padding: 3px 10px; border-radius: 4px; text-decoration: none;
   }
   .pub-link:hover { background: #dbeafe; text-decoration: none; }
   .pub-link.disabled { color: var(--subtle); background: var(--bg); border-color: var(--border); pointer-events: none; }
@@ -303,89 +180,106 @@
   /* CV */
   .cv-section { margin-bottom: 2rem; }
   .cv-section h3 {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--subtle);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 6px;
-    margin-bottom: 14px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--subtle);
+    border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: 14px;
   }
   .cv-row {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 1rem;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border);
-    align-items: start;
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 1rem; padding: 10px 0; border-bottom: 1px solid var(--border); align-items: start;
   }
   .cv-row:last-child { border-bottom: none; }
   .cv-inst { font-size: 14px; font-weight: 600; }
   .cv-dept { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
   .cv-gpa {
-    font-size: 11px;
-    font-family: var(--font-mono);
-    color: #166534;
-    background: #ecfdf5;
-    border: 1px solid #bbf7d0;
-    padding: 2px 8px;
-    border-radius: 3px;
-    margin-top: 6px;
-    display: inline-block;
+    font-size: 11px; font-family: var(--font-mono);
+    color: #166534; background: #ecfdf5; border: 1px solid #bbf7d0;
+    padding: 2px 8px; border-radius: 3px; margin-top: 6px; display: inline-block;
   }
   .cv-date { font-size: 12px; font-family: var(--font-mono); color: var(--subtle); white-space: nowrap; }
   .skills-wrap { display: flex; flex-wrap: wrap; gap: 7px; }
   .skill-pill {
-    font-size: 12px;
-    font-family: var(--font-mono);
-    padding: 4px 12px;
-    border-radius: 4px;
+    font-size: 12px; font-family: var(--font-mono); padding: 4px 12px;
+    border-radius: 4px; background: var(--surface); border: 1px solid var(--border); color: var(--muted);
+  }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .modal-overlay.open { display: flex; }
+
+  .modal {
     background: var(--surface);
     border: 1px solid var(--border);
-    color: var(--muted);
+    border-radius: 14px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
   }
+
+  .modal-close {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--muted);
+    transition: background 0.15s;
+  }
+  .modal-close:hover { background: var(--border); }
+
+  .modal-badge { margin-bottom: 10px; }
+  .modal-title { font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
+  .modal-meta { font-size: 12px; font-family: var(--font-mono); color: var(--subtle); margin-bottom: 1.2rem; }
+
+  .modal-section-label {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--subtle); margin-bottom: 6px; margin-top: 1rem;
+  }
+  .modal-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
+  .modal-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
 
   /* MOBILE */
   @media (max-width: 900px) {
     .layout { flex-direction: column; }
     .sidebar {
-      position: static;
-      width: 100%;
-      border-right: none;
+      position: static; width: 100%; border-right: none;
       border-bottom: 1px solid var(--border);
-      padding: 1.5rem 1rem;
-      flex-direction: column;
-      align-items: center;
+      padding: 1.5rem 1rem; flex-direction: column; align-items: center;
     }
     .avatar { width: 100px; height: 100px; font-size: 28px; }
     .sidebar-name { font-size: 20px; }
     .sidebar-role { font-size: 13px; margin-bottom: 1rem; }
-    .sidebar-links {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 6px;
-      margin-bottom: 0;
-    }
-    .sidebar-link {
-      font-size: 12px;
-      padding: 6px 12px;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      background: var(--bg);
-    }
-    .sidebar-divider { display: none; }
+    .sidebar-links { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 6px; margin-bottom: 0; }
+    .sidebar-link { font-size: 12px; padding: 6px 12px; border: 1px solid var(--border); border-radius: 20px; background: var(--bg); }
     .main { margin-left: 0; }
     .topnav { padding: 0 0.5rem; height: 44px; overflow-x: auto; }
     .nav-item { font-size: 13px; padding: 0 12px; flex-shrink: 0; }
     .content { padding: 1.2rem 1rem; }
     .project-grid { grid-template-columns: 1fr; }
-    .pub-thumb { display: none; }
     .about-band { padding: 1.2rem; }
     .about-band p { font-size: 14px; }
     .cv-row { grid-template-columns: 1fr; gap: 4px; }
     .cv-date { font-size: 11px; }
+    .modal { padding: 1.5rem; }
   }
 </style>
 </head>
@@ -424,14 +318,13 @@
 
     <div class="content">
 
-      <!-- ── HOME ── -->
+      <!-- HOME -->
       <div class="tab-section active" id="tab-home">
-
         <div class="about-band">
           <h2>About me</h2>
           <p>
             I am an undergraduate researcher at <strong>Hanyang University</strong>, Korea
-            (B.S. Electronic Engineering, expected Feb 2027 graduation),
+            (B.S. Electronic Engineering, expected Feb 2027),
             and an exchange student and undergraduate researcher at the
             <strong>University of North Dakota</strong> under Prof. Jueming Hu (Jan–May 2026).
             My research focuses on <strong>robust UAV path planning</strong> and
@@ -443,8 +336,8 @@
 
         <div class="section-label">Featured Research</div>
         <div class="project-grid">
-         
-          <a class="project-card" href="#" target="_blank">
+
+          <div class="project-card" onclick="openModal('uav')">
             <div class="card-img">
               <video autoplay loop muted playsinline style="width:100%; height:100%; object-fit:contain; background:#ffffff;">
                 <source src="images/UAV_path_planning_final.mp4" type="video/mp4">
@@ -461,9 +354,9 @@
                 <span class="chip">Sensor Dropout</span>
               </div>
             </div>
-          </a>
+          </div>
 
-          <a class="project-card" href="#" target="_blank">
+          <div class="project-card" onclick="openModal('eacnn')">
             <div class="card-img">
               <img src="images/EACNN-FD_flowchart_final.png" alt="">
             </div>
@@ -477,9 +370,9 @@
                 <span class="chip">PyTorch</span>
               </div>
             </div>
-          </a>
+          </div>
 
-          <a class="project-card" href="#" target="_blank">
+          <div class="project-card" onclick="openModal('crazyflie')">
             <div class="card-img">
               <video autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover;">
                 <source src="images/crazyflie_final.mp4" type="video/mp4">
@@ -495,9 +388,9 @@
                 <span class="chip">OpenAI Gym</span>
               </div>
             </div>
-          </a>
+          </div>
 
-          <a class="project-card" href="#" target="_blank">
+          <div class="project-card" onclick="openModal('skeleton')">
             <div class="card-img">
               <img src="images/deepskeleton_demo.png" alt="">
             </div>
@@ -511,9 +404,9 @@
                 <span class="chip">PyTorch</span>
               </div>
             </div>
-          </a>
+          </div>
 
-          <a class="project-card" href="#" target="_blank">
+          <div class="project-card" onclick="openModal('uwb')">
             <div class="card-img">
               <img src="images/UWB_final.png" alt="">
             </div>
@@ -528,16 +421,15 @@
                 <span class="chip">PyTorch</span>
               </div>
             </div>
-          </a>
+          </div>
 
         </div>
       </div>
 
-      <!-- ── PUBLICATIONS ── -->
+      <!-- PUBLICATIONS -->
       <div class="tab-section" id="tab-publications">
         <div class="section-label" style="margin-bottom:1.2rem">Publications</div>
         <div class="pub-list">
-          <!-- EACNN: href에 논문 PDF 링크를 넣으세요 -->
           <a class="pub-card" href="#" target="_blank" style="text-decoration:none; color:inherit; display:flex; gap:16px; align-items:flex-start;">
             <div class="pub-info">
               <div class="pub-title-text">Robust fault diagnosis of rotating machinery using entropy-augmented CNN in time and frequency domains</div>
@@ -548,18 +440,17 @@
               </div>
             </div>
           </a>
-
         </div>
       </div>
 
-      <!-- ── PROJECTS ── -->
+      <!-- PROJECTS -->
       <div class="tab-section" id="tab-projects">
         <div class="section-label" style="margin-bottom:1.2rem">All Projects</div>
         <div class="project-grid">
 
-          <a class="project-card" href="#" target="_blank">
+          <div class="project-card" onclick="openModal('uav')">
             <div class="card-img">
-              <video autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover;">
+              <video autoplay loop muted playsinline style="width:100%; height:100%; object-fit:contain; background:#ffffff;">
                 <source src="images/UAV_path_planning_final.mp4" type="video/mp4">
               </video>
             </div>
@@ -574,9 +465,9 @@
                 <span class="chip">Sensor Dropout</span>
               </div>
             </div>
-          </a>
+          </div>
 
-          <a class="project-card" href="#" target="_blank">
+          <div class="project-card" onclick="openModal('eacnn')">
             <div class="card-img">
               <img src="images/EACNN-FD_flowchart_final.png" alt="">
             </div>
@@ -590,9 +481,9 @@
                 <span class="chip">PyTorch</span>
               </div>
             </div>
-          </a>
+          </div>
 
-          <a class="project-card" href="#" target="_blank">
+          <div class="project-card" onclick="openModal('crazyflie')">
             <div class="card-img">
               <video autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover;">
                 <source src="images/crazyflie_final.mp4" type="video/mp4">
@@ -608,9 +499,9 @@
                 <span class="chip">OpenAI Gym</span>
               </div>
             </div>
-          </a>
+          </div>
 
-          <a class="project-card" href="#" target="_blank">
+          <div class="project-card" onclick="openModal('skeleton')">
             <div class="card-img">
               <img src="images/deepskeleton_demo.png" alt="">
             </div>
@@ -624,9 +515,9 @@
                 <span class="chip">PyTorch</span>
               </div>
             </div>
-          </a>
+          </div>
 
-          <a class="project-card" href="#" target="_blank">
+          <div class="project-card" onclick="openModal('uwb')">
             <div class="card-img">
               <img src="images/UWB_final.png" alt="">
             </div>
@@ -641,14 +532,13 @@
                 <span class="chip">PyTorch</span>
               </div>
             </div>
-          </a>
+          </div>
 
         </div>
       </div>
 
-      <!-- ── CV ── -->
+      <!-- CV -->
       <div class="tab-section" id="tab-cv">
-
         <div class="cv-section">
           <h3>Education</h3>
           <div class="cv-row">
@@ -747,14 +637,99 @@
         <div style="margin-top:2rem">
           <a class="pub-link" href="/files/CV - Minseok Park.pdf" target="_blank">↓ Download full CV (PDF)</a>
         </div>
-
       </div>
 
     </div>
   </div>
 </div>
 
+<!-- ── MODAL OVERLAY ── -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal" id="modalBox">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
 <script>
+const projects = {
+  uav: {
+    badge: '<span class="card-badge badge-preparation">In Preparation</span>',
+    title: 'Resilient UAV Navigation under Sensor Dropout',
+    meta: 'University of North Dakota · Jan 2026 – Present',
+    goal: 'Designed and trained a UAV navigation policy capable of maintaining robust flight performance under intermittent sensor dropout conditions, simulating real-world GPS-denied or sensor-failure environments.',
+    detail: 'Built a two-layer hierarchical architecture combining high-level path planning with a low-level RL-based execution policy. Applied Behavior Cloning and Decision Transformer for imitation learning, and integrated a remasking mechanism to handle missing sensor inputs during inference. Achieved 91–95% task completion rate, outperforming baseline models under sensor failure conditions.',
+    status: 'Manuscript in preparation, targeting IEEE RA-L.',
+    chips: ['Reinforcement Learning', 'Imitation Learning', 'Decision Transformer', 'Behavior Cloning', 'PyBullet', 'Sensor Dropout']
+  },
+  eacnn: {
+    badge: '<span class="card-badge badge-accepted">Accepted · ASME IMECE 2026</span>',
+    title: 'Robust Fault Diagnosis of Rotating Machinery via Entropy-Augmented CNN',
+    meta: 'University of North Dakota · Jan – May 2026',
+    goal: 'Developed a fault detection framework that classifies rotating machinery conditions using entropy-based signal features and a CNN classifier, with speed-invariant performance.',
+    detail: 'Extracted Multiscale Sample Entropy (MSE) from time-domain signals and Shannon Spectral Entropy (SSE) from frequency-domain signals to generate 24 combined features. These features were fed into a CNN classifier achieving over 95% accuracy across three different rotational speeds, demonstrating robustness to operating condition changes.',
+    status: 'Accepted at ASME International Mechanical Engineering Congress and Exposition (IMECE) 2026.',
+    chips: ['CNN', 'Signal Processing', 'Entropy Features', 'PyTorch', 'Fault Diagnosis']
+  },
+  crazyflie: {
+    badge: '<span class="card-badge badge-completed">Completed</span>',
+    title: 'End-to-End RL-Based UAV Waypoint Navigation',
+    meta: 'University of North Dakota · Jan – May 2026',
+    goal: 'Built an end-to-end reinforcement learning environment simulating Crazyflie UAV dynamics in PyBullet to train a navigation policy for waypoint tracking.',
+    detail: 'Extended an existing circular path-following model by introducing target state augmentation, enabling the agent to navigate toward single fixed goals and sequentially track two randomly placed waypoints. Trained using PPO and evaluated in simulation. Demonstrated at an oral presentation.',
+    status: 'Completed.',
+    chips: ['PPO', 'PyBullet', 'OpenAI Gym', 'Crazyflie Simulation', 'Waypoint Navigation']
+  },
+  skeleton: {
+    badge: '<span class="card-badge badge-completed">Completed</span>',
+    title: 'Skeleton Detection & Thickness Estimation via Multi-Task CNN',
+    meta: 'University of North Dakota · Jan – May 2026',
+    goal: 'Analyzed and optimized a PyTorch implementation of the DeepSkeleton algorithm to simultaneously extract object skeletons and predict structural thickness from natural images.',
+    detail: 'Implemented a multi-task CNN based on the VGG16 backbone with scale-associated side outputs performing two tasks: skeleton localization (classification) and scale/thickness prediction (regression). Optimized the post-processing pipeline to improve output quality. Results were presented at an oral session.',
+    status: 'Completed.',
+    chips: ['Multi-task CNN', 'VGG16', 'Skeleton Detection', 'Thickness Estimation', 'PyTorch']
+  },
+  uwb: {
+    badge: '<span class="card-badge badge-completed">Completed</span>',
+    title: 'Multi-Anchor CNN with ToA Attention for UWB Indoor Localization',
+    meta: 'Hanyang University · Sep – Dec 2025',
+    goal: 'Developed a CNN-based indoor localization model using UWB signals from multiple anchors to estimate receiver position with improved NLoS robustness.',
+    detail: 'Designed a Multi-Anchor CNN that processes Channel Impulse Response (CIR) and Time of Arrival (ToA) signals from 8 access points simultaneously. Integrated a ToA-based Softmax Attention mechanism to suppress Non-Line-of-Sight (NLoS) interference. Achieved RMSE of 1.439m, below the 1.5m commercialization target.',
+    status: 'Completed as a course project.',
+    chips: ['CNN', 'UWB', 'ToA', 'Softmax Attention', 'NLoS Mitigation', 'PyTorch']
+  }
+};
+
+function openModal(id) {
+  const p = projects[id];
+  document.getElementById('modalContent').innerHTML = `
+    <div class="modal-badge">${p.badge}</div>
+    <div class="modal-title">${p.title}</div>
+    <div class="modal-meta">${p.meta}</div>
+    <div class="modal-section-label">Goal</div>
+    <div class="modal-desc">${p.goal}</div>
+    <div class="modal-section-label">Details</div>
+    <div class="modal-desc">${p.detail}</div>
+    <div class="modal-section-label">Status</div>
+    <div class="modal-desc">${p.status}</div>
+    <div class="modal-section-label">Technologies</div>
+    <div class="modal-chips">${p.chips.map(c => `<span class="chip">${c}</span>`).join('')}</div>
+  `;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeModalOutside(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
 function showTab(name, el) {
   document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
