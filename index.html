@@ -55,12 +55,6 @@
     border: 3px solid var(--border);
     margin-bottom: 1rem;
     background: var(--bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-serif);
-    font-size: 36px;
-    color: var(--muted);
     overflow: hidden;
     flex-shrink: 0;
   }
@@ -111,6 +105,12 @@
   }
   .about-band p { font-size: 16px; color: var(--muted); line-height: 1.8; }
   .about-band p strong { color: var(--text); font-weight: 600; }
+  .interest-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .interest {
+    font-size: 12px; font-family: var(--font-mono);
+    padding: 3px 10px; border-radius: 4px;
+    background: var(--accent-light); color: var(--accent); border: 1px solid #bfdbfe;
+  }
 
   /* SECTION LABEL */
   .section-label {
@@ -120,7 +120,6 @@
 
   /* PROJECT GRID */
   .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-
   .project-card {
     background: var(--surface); border: 1px solid var(--border);
     border-radius: 10px; overflow: hidden; cursor: pointer;
@@ -128,7 +127,6 @@
     color: inherit; display: flex; flex-direction: column;
   }
   .project-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); transform: translateY(-2px); }
-
   .card-img {
     width: 100%; aspect-ratio: 16 / 9; background: #ffffff;
     border-bottom: 1px solid var(--border);
@@ -136,9 +134,7 @@
     overflow: hidden; flex-shrink: 0;
   }
   .card-img img { width: 100%; height: 100%; object-fit: contain; display: block; }
-  .card-img-placeholder { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-  .card-img-placeholder svg { width: 32px; height: 32px; stroke: #d0cdc8; fill: none; stroke-width: 1.5; stroke-linecap: round; }
-  .card-img-placeholder span { font-size: 11px; font-family: var(--font-mono); color: #c0bdb8; }
+  .card-img video { width: 100%; height: 100%; display: block; background: #ffffff; }
   .card-body { padding: 14px 16px; }
 
   .card-badge {
@@ -150,6 +146,7 @@
   .badge-progress    { background: var(--bg); color: var(--subtle); border: 1px solid var(--border); }
   .badge-completed   { background: #f0f9ff; color: #0369a1; border: 1px solid #bae6fd; }
   .badge-preparation { background: #fdf4ff; color: #7e22ce; border: 1px solid #e9d5ff; }
+  .badge-sm { font-size: 10px; padding: 2px 8px; margin: 0 0 0 8px; vertical-align: middle; }
 
   .card-title { font-size: 15px; font-weight: 600; line-height: 1.35; margin-bottom: 4px; }
   .card-desc  { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 8px; }
@@ -161,13 +158,9 @@
   .pub-card {
     background: var(--surface); border: 1px solid var(--border);
     border-radius: 10px; padding: 18px 20px;
-    display: flex; gap: 16px; align-items: flex-start;
-    transition: box-shadow 0.2s; cursor: pointer;
   }
-  .pub-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
-  .pub-info { flex: 1; }
-  .pub-title-text { font-size: 13.5px; font-weight: 600; line-height: 1.4; margin-bottom: 4px; }
-  .pub-venue { font-size: 11.5px; color: var(--muted); margin-bottom: 10px; font-family: var(--font-mono); }
+  .pub-title-text { font-size: 14px; font-weight: 600; line-height: 1.4; margin-bottom: 4px; }
+  .pub-venue { font-size: 12px; color: var(--muted); margin-bottom: 10px; font-family: var(--font-mono); }
   .pub-links { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
   .pub-link {
     font-size: 11px; font-family: var(--font-mono);
@@ -191,65 +184,47 @@
   .cv-row:last-child { border-bottom: none; }
   .cv-inst { font-size: 14px; font-weight: 600; }
   .cv-dept { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+  .cv-subhead { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+  .cv-subnote { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+  .cv-list { margin: 6px 0 0 18px; font-size: 12.5px; color: var(--muted); line-height: 1.6; }
   .cv-gpa {
     font-size: 11px; font-family: var(--font-mono);
     color: #166534; background: #ecfdf5; border: 1px solid #bbf7d0;
     padding: 2px 8px; border-radius: 3px; margin-top: 6px; display: inline-block;
   }
   .cv-date { font-size: 12px; font-family: var(--font-mono); color: var(--subtle); white-space: nowrap; }
+  .skill-group { display: grid; grid-template-columns: 170px 1fr; gap: 1rem; padding: 8px 0; align-items: start; }
+  .skill-label { font-size: 13px; font-weight: 600; padding-top: 3px; }
   .skills-wrap { display: flex; flex-wrap: wrap; gap: 7px; }
   .skill-pill {
     font-size: 12px; font-family: var(--font-mono); padding: 4px 12px;
     border-radius: 4px; background: var(--surface); border: 1px solid var(--border); color: var(--muted);
   }
 
-  /* ── MODAL ── */
+  /* MODAL */
   .modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 200;
+    display: none; position: fixed; inset: 0; z-index: 200;
     background: rgba(0,0,0,0.45);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    align-items: center; justify-content: center; padding: 2rem;
   }
   .modal-overlay.open { display: flex; }
-
   .modal {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    max-width: 600px;
-    width: 100%;
-    max-height: 85vh;
-    overflow-y: auto;
-    padding: 2rem;
-    position: relative;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; max-width: 600px; width: 100%;
+    max-height: 85vh; overflow-y: auto; padding: 2rem;
+    position: relative; box-shadow: 0 20px 60px rgba(0,0,0,0.2);
   }
-
   .modal-close {
-    position: absolute;
-    top: 1rem; right: 1rem;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    width: 32px; height: 32px;
-    display: flex; align-items: center; justify-content: center;
-    cursor: pointer;
-    font-size: 16px;
-    color: var(--muted);
-    transition: background 0.15s;
+    position: absolute; top: 1rem; right: 1rem;
+    background: var(--bg); border: 1px solid var(--border); border-radius: 50%;
+    width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 16px; color: var(--muted);
   }
   .modal-close:hover { background: var(--border); }
-
   .modal-badge { margin-bottom: 10px; }
-  .modal-title { font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
+  .modal-title { font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 6px; padding-right: 2rem; }
   .modal-meta { font-size: 12px; font-family: var(--font-mono); color: var(--subtle); margin-bottom: 1.2rem; }
-
   .modal-section-label {
     font-size: 10px; font-weight: 600; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--subtle); margin-bottom: 6px; margin-top: 1rem;
@@ -262,10 +237,9 @@
     .layout { flex-direction: column; }
     .sidebar {
       position: static; width: 100%; border-right: none;
-      border-bottom: 1px solid var(--border);
-      padding: 1.5rem 1rem; flex-direction: column; align-items: center;
+      border-bottom: 1px solid var(--border); padding: 1.5rem 1rem;
     }
-    .avatar { width: 100px; height: 100px; font-size: 28px; }
+    .avatar { width: 100px; height: 100px; }
     .sidebar-name { font-size: 20px; }
     .sidebar-role { font-size: 13px; margin-bottom: 1rem; }
     .sidebar-links { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 6px; margin-bottom: 0; }
@@ -279,6 +253,7 @@
     .about-band p { font-size: 14px; }
     .cv-row { grid-template-columns: 1fr; gap: 4px; }
     .cv-date { font-size: 11px; }
+    .skill-group { grid-template-columns: 1fr; gap: 6px; }
     .modal { padding: 1.5rem; }
   }
 </style>
@@ -286,7 +261,7 @@
 <body>
 <div class="layout">
 
-  <!-- SIDEBAR -->
+  <!-- ===================== SIDEBAR ===================== -->
   <aside class="sidebar">
     <div class="avatar"><img src="images/profile1.png" alt="Minseok Park"></div>
     <div class="sidebar-name">Minseok Park</div>
@@ -300,14 +275,15 @@
         <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn
       </a>
-      <a class="sidebar-link" href="/files/CV_Minseok_Park_26.09.04.pdf" target="_blank">
+      <!-- CV 파일을 새로 올리면 아래 경로 두 곳(사이드바, CV 탭 하단)을 같은 파일명으로 맞추세요 -->
+      <a class="sidebar-link" href="files/CV_Minseok_Park_26.10.26.pdf" target="_blank">
         <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         CV (PDF)
       </a>
     </div>
   </aside>
 
-  <!-- MAIN -->
+  <!-- ===================== MAIN ===================== -->
   <div class="main">
     <nav class="topnav">
       <a class="nav-item active" href="#" onclick="showTab('home',this);return false;">Home</a>
@@ -318,71 +294,81 @@
 
     <div class="content">
 
-      <!-- HOME -->
+      <!-- ===================== HOME ===================== -->
       <div class="tab-section active" id="tab-home">
+
         <div class="about-band">
           <h2>About me</h2>
           <p>
-            I am an undergraduate researcher at <strong>Hanyang University</strong>, Korea
-            (B.S. Electronic Engineering, expected Feb 2027),
-            and an exchange student and undergraduate researcher at the
-            <strong>University of North Dakota</strong> under Prof. Jueming Hu (Jan–May 2026).
-            My research focuses on <strong>robust UAV path planning</strong> and
-            <strong>autonomous navigation under sensor dropout conditions</strong>,
-            combining Reinforcement Learning and Imitation Learning.
-            I am applying for PhD programs in <strong>Fall 2027</strong>.
+            I am an undergraduate student at <strong>Hanyang University</strong>, Korea
+            (B.S. Electronic Engineering, expected Feb 2027).
+            During my exchange semester at the <strong>University of North Dakota</strong> (Jan–May 2026),
+            I joined Prof. Jueming Hu's lab as an undergraduate researcher and have continued this research since.
+            My current work focuses on <strong>resilient UAV navigation under sensor dropout</strong>
+            using offline reinforcement learning.
+            I am highly interested in pursuing a PhD starting in <strong>Fall 2027</strong>.
           </p>
+          <div class="interest-row">
+            <span class="interest">UAV Autonomy</span>
+            <span class="interest">Robust Path Planning</span>
+            <span class="interest">Reinforcement Learning</span>
+          </div>
         </div>
 
         <div class="section-label">Featured Research</div>
         <div class="project-grid">
 
+          <!-- UAV (ADT-UAV) -->
           <div class="project-card" onclick="openModal('uav')">
             <div class="card-img">
-              <video autoplay loop muted playsinline style="width:100%; height:100%; object-fit:contain; background:#ffffff;">
+              <video autoplay loop muted playsinline style="object-fit:contain;">
                 <source src="images/UAV_path_planning_final.mp4" type="video/mp4">
               </video>
             </div>
             <div class="card-body">
               <span class="card-badge badge-preparation">In Preparation</span>
               <div class="card-title">Resilient UAV Navigation under Sensor Dropout</div>
-              <div class="card-desc">Developed a UAV navigation policy resilient to sensor dropout, achieving up to 91–95% task completion rate and outperforming baseline models under intermittent sensor failure conditions.</div>
+              <div class="card-desc">Developed an auxiliary-learning-enhanced Decision Transformer for resilient UAV navigation under intermittent localization and range sensor dropout, achieving 88% success rate at 40% dropout probability.</div>
               <div class="card-chips">
-                <span class="chip">Reinforcement Learning</span>
-                <span class="chip">Imitation Learning</span>
+                <span class="chip">Decision Transformer</span>
+                <span class="chip">Offline RL</span>
+                <span class="chip">Auxiliary Learning</span>
                 <span class="chip">PyBullet</span>
-                <span class="chip">Sensor Dropout</span>
               </div>
             </div>
           </div>
 
+          <!-- EACNN -->
           <div class="project-card" onclick="openModal('eacnn')">
             <div class="card-img">
-              <img src="images/EACNN-FD_flowchart_final.png" alt="">
+              <img src="images/EACNN-FD_flowchart_final.png" alt="EACNN-FD framework">
             </div>
             <div class="card-body">
               <span class="card-badge badge-accepted">Accepted · ASME IMECE 2026</span>
               <div class="card-title">Robust Fault Diagnosis of Rotating Machinery via Entropy-Augmented CNN</div>
-              <div class="card-desc">Developed a fault detection framework using entropy-based signal processing and CNN classification to identify mechanical imbalance and misalignment.</div>
+              <div class="card-desc">Combined entropy-based vibration features with CNN to diagnose shaft misalignment and rotor unbalance across multiple rotational speeds, achieving over 95% accuracy in both time and frequency domains.</div>
               <div class="card-chips">
                 <span class="chip">CNN</span>
+                <span class="chip">Entropy Features</span>
                 <span class="chip">Signal Processing</span>
                 <span class="chip">PyTorch</span>
               </div>
             </div>
           </div>
 
+          <!-- CRAZYFLIE -->
           <div class="project-card" onclick="openModal('crazyflie')">
             <div class="card-img">
-              <video autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover;">
+              <video autoplay loop muted playsinline style="object-fit:cover;">
                 <source src="images/crazyflie_final.mp4" type="video/mp4">
               </video>
             </div>
             <div class="card-body">
               <span class="card-badge badge-completed">Completed</span>
               <div class="card-title">End-to-End RL-Based UAV Waypoint Navigation</div>
-              <div class="card-desc">Developed an RL-based navigation controller simulating Crazyflie UAV dynamics in PyBullet, implementing single and multi-waypoint goal tracking.</div>
+              <div class="card-desc">Developed an end-to-end RL policy in a Crazyflie PyBullet simulation, progressing from single-waypoint hovering to sequential multi-waypoint navigation with randomized goal spawning.</div>
               <div class="card-chips">
+                <span class="chip">Reinforcement Learning</span>
                 <span class="chip">PPO</span>
                 <span class="chip">PyBullet</span>
                 <span class="chip">OpenAI Gym</span>
@@ -390,93 +376,59 @@
             </div>
           </div>
 
-          <div class="project-card" onclick="openModal('skeleton')">
-            <div class="card-img">
-              <img src="images/deepskeleton_demo.png" alt="">
-            </div>
-            <div class="card-body">
-              <span class="card-badge badge-completed">Completed</span>
-              <div class="card-title">Skeleton Detection & Thickness Estimation via Multi-Task CNN</div>
-              <div class="card-desc">Analyzed and optimized the DeepSkeleton algorithm using a multi-task CNN to simultaneously extract object skeletons and predict structural thickness from natural images.</div>
-              <div class="card-chips">
-                <span class="chip">Multi-task CNN</span>
-                <span class="chip">VGG16</span>
-                <span class="chip">PyTorch</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card" onclick="openModal('uwb')">
-            <div class="card-img">
-              <img src="images/UWB_final.png" alt="">
-            </div>
-            <div class="card-body">
-              <span class="card-badge badge-completed">Completed</span>
-              <div class="card-title">Multi-Anchor CNN with ToA Attention for UWB Indoor Localization</div>
-              <div class="card-desc">Developed a Multi-Anchor CNN integrating ToA-based attention to estimate receiver position for UWB-based indoor localization. Achieved RMSE 1.439m below 1.5m commercialization target.</div>
-              <div class="card-chips">
-                <span class="chip">CNN</span>
-                <span class="chip">UWB</span>
-                <span class="chip">Softmax Attention</span>
-                <span class="chip">PyTorch</span>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
 
-      <!-- PUBLICATIONS -->
+      <!-- ===================== PUBLICATIONS ===================== -->
       <div class="tab-section" id="tab-publications">
         <div class="section-label" style="margin-bottom:1.2rem">Publications</div>
         <div class="pub-list">
-          <div class="pub-card" style="display:flex; gap:16px; align-items:flex-start;">
-            <div class="pub-info">
-              <div class="pub-title-text">Robust fault diagnosis of rotating machinery using entropy-augmented CNN in time and frequency domains</div>
-              <div class="pub-venue"><strong>Park M.</strong>, Yang C.X., Hu J.</div>
-              <div class="pub-links">
-                <span class="card-badge badge-accepted" style="font-size:10px;padding:2px 8px;margin:0">Accepted · ASME IMECE 2026</span>
-                <span class="pub-link disabled">PDF (coming soon)</span>
-              </div>
+          <div class="pub-card">
+            <div class="pub-title-text">Robust Fault Diagnosis of Rotating Machinery Using Entropy-Augmented CNN in Time and Frequency Domains</div>
+            <div class="pub-venue"><strong>M. Park</strong>, C. X. Yang, J. Hu</div>
+            <div class="pub-links">
+              <span class="card-badge badge-accepted" style="font-size:10px;margin:0">Accepted · ASME IMECE 2026</span>
+              <span class="pub-link disabled">PDF (coming soon)</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- PROJECTS -->
+      <!-- ===================== PROJECTS ===================== -->
       <div class="tab-section" id="tab-projects">
         <div class="section-label" style="margin-bottom:1.2rem">All Projects</div>
         <div class="project-grid">
 
           <div class="project-card" onclick="openModal('uav')">
             <div class="card-img">
-              <video autoplay loop muted playsinline style="width:100%; height:100%; object-fit:contain; background:#ffffff;">
+              <video autoplay loop muted playsinline style="object-fit:contain;">
                 <source src="images/UAV_path_planning_final.mp4" type="video/mp4">
               </video>
             </div>
             <div class="card-body">
               <span class="card-badge badge-preparation">In Preparation</span>
               <div class="card-title">Resilient UAV Navigation under Sensor Dropout</div>
-              <div class="card-desc">Developed a UAV navigation policy resilient to sensor dropout, achieving up to 91–95% task completion rate and outperforming baseline models under intermittent sensor failure conditions.</div>
+              <div class="card-desc">Developed an auxiliary-learning-enhanced Decision Transformer for resilient UAV navigation under intermittent localization and range sensor dropout, achieving 88% success rate at 40% dropout probability.</div>
               <div class="card-chips">
-                <span class="chip">Reinforcement Learning</span>
-                <span class="chip">Imitation Learning</span>
+                <span class="chip">Decision Transformer</span>
+                <span class="chip">Offline RL</span>
+                <span class="chip">Auxiliary Learning</span>
                 <span class="chip">PyBullet</span>
-                <span class="chip">Sensor Dropout</span>
               </div>
             </div>
           </div>
 
           <div class="project-card" onclick="openModal('eacnn')">
             <div class="card-img">
-              <img src="images/EACNN-FD_flowchart_final.png" alt="">
+              <img src="images/EACNN-FD_flowchart_final.png" alt="EACNN-FD framework">
             </div>
             <div class="card-body">
               <span class="card-badge badge-accepted">Accepted · ASME IMECE 2026</span>
               <div class="card-title">Robust Fault Diagnosis of Rotating Machinery via Entropy-Augmented CNN</div>
-              <div class="card-desc">Developed a fault detection framework using entropy-based signal processing and CNN classification to identify mechanical imbalance and misalignment.</div>
+              <div class="card-desc">Combined entropy-based vibration features with CNN to diagnose shaft misalignment and rotor unbalance across multiple rotational speeds, achieving over 95% accuracy in both time and frequency domains.</div>
               <div class="card-chips">
                 <span class="chip">CNN</span>
+                <span class="chip">Entropy Features</span>
                 <span class="chip">Signal Processing</span>
                 <span class="chip">PyTorch</span>
               </div>
@@ -485,15 +437,16 @@
 
           <div class="project-card" onclick="openModal('crazyflie')">
             <div class="card-img">
-              <video autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover;">
+              <video autoplay loop muted playsinline style="object-fit:cover;">
                 <source src="images/crazyflie_final.mp4" type="video/mp4">
               </video>
             </div>
             <div class="card-body">
               <span class="card-badge badge-completed">Completed</span>
               <div class="card-title">End-to-End RL-Based UAV Waypoint Navigation</div>
-              <div class="card-desc">Developed an RL-based navigation controller simulating Crazyflie UAV dynamics in PyBullet, implementing single and multi-waypoint goal tracking.</div>
+              <div class="card-desc">Developed an end-to-end RL policy in a Crazyflie PyBullet simulation, progressing from single-waypoint hovering to sequential multi-waypoint navigation with randomized goal spawning.</div>
               <div class="card-chips">
+                <span class="chip">Reinforcement Learning</span>
                 <span class="chip">PPO</span>
                 <span class="chip">PyBullet</span>
                 <span class="chip">OpenAI Gym</span>
@@ -501,30 +454,14 @@
             </div>
           </div>
 
-          <div class="project-card" onclick="openModal('skeleton')">
-            <div class="card-img">
-              <img src="images/deepskeleton_demo.png" alt="">
-            </div>
-            <div class="card-body">
-              <span class="card-badge badge-completed">Completed</span>
-              <div class="card-title">Skeleton Detection & Thickness Estimation via Multi-Task CNN</div>
-              <div class="card-desc">Analyzed and optimized the DeepSkeleton algorithm using a multi-task CNN to simultaneously extract object skeletons and predict structural thickness from natural images.</div>
-              <div class="card-chips">
-                <span class="chip">Multi-task CNN</span>
-                <span class="chip">VGG16</span>
-                <span class="chip">PyTorch</span>
-              </div>
-            </div>
-          </div>
-
           <div class="project-card" onclick="openModal('uwb')">
             <div class="card-img">
-              <img src="images/UWB_final.png" alt="">
+              <img src="images/UWB_final.png" alt="UWB indoor localization">
             </div>
             <div class="card-body">
               <span class="card-badge badge-completed">Completed</span>
               <div class="card-title">Multi-Anchor CNN with ToA Attention for UWB Indoor Localization</div>
-              <div class="card-desc">Developed a Multi-Anchor CNN integrating ToA-based attention to estimate receiver position for UWB-based indoor localization. Achieved RMSE 1.439m below 1.5m commercialization target.</div>
+              <div class="card-desc">Designed and implemented a Multi-Anchor CNN integrating ToA-based Softmax Attention to suppress NLoS interference in UWB indoor localization.</div>
               <div class="card-chips">
                 <span class="chip">CNN</span>
                 <span class="chip">UWB</span>
@@ -534,11 +471,37 @@
             </div>
           </div>
 
+          <div class="project-card" onclick="openModal('skeleton')">
+            <div class="card-img">
+              <img src="images/deepskeleton_demo.png" alt="Skeleton extraction result">
+            </div>
+            <div class="card-body">
+              <span class="card-badge badge-completed">Completed</span>
+              <div class="card-title">Object Skeleton Extraction via Multi-Task CNN</div>
+              <div class="card-desc">Reproduced and debugged the DeepSkeleton algorithm to extract object skeletons from natural images using a multi-task CNN.</div>
+              <div class="card-chips">
+                <span class="chip">Multi-task CNN</span>
+                <span class="chip">VGG16</span>
+                <span class="chip">PyTorch</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <!-- CV -->
+      <!-- ===================== CV (CV PDF와 동일한 내용만) ===================== -->
       <div class="tab-section" id="tab-cv">
+
+        <div class="cv-section">
+          <h3>Research Interests</h3>
+          <div class="skills-wrap">
+            <span class="skill-pill">UAV Autonomy</span>
+            <span class="skill-pill">Robust Path Planning</span>
+            <span class="skill-pill">Reinforcement Learning</span>
+          </div>
+        </div>
+
         <div class="cv-section">
           <h3>Education</h3>
           <div class="cv-row">
@@ -547,12 +510,12 @@
               <div class="cv-dept">B.S. Electronic Engineering · Seoul, Republic of Korea</div>
               <div class="cv-gpa">GPA 3.84 / 4.0</div>
             </div>
-            <div class="cv-date">2021 – Feb 2027</div>
+            <div class="cv-date">Expected Feb 2027</div>
           </div>
           <div class="cv-row">
             <div>
               <div class="cv-inst">University of North Dakota</div>
-              <div class="cv-dept">Exchange Program, Electrical Engineering · Grand Forks, ND (Advisor: Prof. Jueming Hu)</div>
+              <div class="cv-dept">Exchange Program, Electrical Engineering · Grand Forks, ND</div>
               <div class="cv-gpa">GPA 4.0 / 4.0</div>
             </div>
             <div class="cv-date">Jan – May 2026</div>
@@ -560,143 +523,204 @@
         </div>
 
         <div class="cv-section">
+          <h3>Research Experience</h3>
+          <div class="cv-subhead">Undergraduate Researcher · University of North Dakota</div>
+          <div class="cv-subnote">Advisor: Prof. Jueming Hu (now at University of Oklahoma)</div>
+          <div class="cv-row">
+            <div>
+              <div class="cv-inst">Resilient UAV Navigation under Sensor Dropout<span class="card-badge badge-preparation badge-sm">In Preparation</span></div>
+              <ul class="cv-list">
+                <li>Developed an auxiliary-learning-enhanced Decision Transformer for resilient UAV navigation under intermittent localization and range sensor dropout.</li>
+                <li>Achieved 88% success rate at 40% dropout probability, outperforming baseline models.</li>
+                <li>Manuscript in preparation, targeting IEEE Internet of Things Journal.</li>
+              </ul>
+            </div>
+            <div class="cv-date">Mar 2026 – Present</div>
+          </div>
+          <div class="cv-row">
+            <div>
+              <div class="cv-inst">Robust Fault Diagnosis of Rotating Machinery via Entropy-Augmented CNN<span class="card-badge badge-accepted badge-sm">Accepted · ASME IMECE 2026</span></div>
+              <ul class="cv-list">
+                <li>Combined entropy-based vibration features with CNN to diagnose shaft misalignment and rotor unbalance across multiple rotational speeds.</li>
+                <li>Achieved over 95% classification accuracy across both time and frequency domains.</li>
+              </ul>
+            </div>
+            <div class="cv-date">Mar – May 2026</div>
+          </div>
+          <div class="cv-row">
+            <div>
+              <div class="cv-inst">End-to-End RL-Based UAV Waypoint Navigation<span class="card-badge badge-completed badge-sm">Completed</span></div>
+              <ul class="cv-list">
+                <li>Augmented the state space of an existing circular path-following controller with goal position, developing an end-to-end RL policy for single-waypoint hovering navigation in a Crazyflie PyBullet simulation environment.</li>
+                <li>Progressed from single-waypoint hovering to sequential multi-waypoint navigation with randomized goal spawning.</li>
+              </ul>
+            </div>
+            <div class="cv-date">Jan – Mar 2026</div>
+          </div>
+
+          <div class="cv-subhead" style="margin-top:18px">Coursework Project · Hanyang University</div>
+          <div class="cv-row">
+            <div>
+              <div class="cv-inst">Multi-Anchor CNN with ToA Attention for UWB Indoor Localization<span class="card-badge badge-completed badge-sm">Completed</span></div>
+              <ul class="cv-list">
+                <li>Designed and implemented a Multi-Anchor CNN integrating ToA-based Softmax Attention to suppress NLoS interference in UWB indoor localization.</li>
+              </ul>
+            </div>
+            <div class="cv-date">Sep – Dec 2025</div>
+          </div>
+        </div>
+
+        <div class="cv-section">
           <h3>Publication</h3>
           <div class="cv-row">
             <div>
-              <div class="cv-inst" style="font-size:13px; font-weight:400; line-height:1.6">
-                <strong>Park M.</strong>, Yang C. X., Hu J. (2026). Robust fault diagnosis of rotating machinery
-                using entropy-augmented CNN in time and frequency domains.
-                <span class="card-badge badge-accepted" style="margin-left:6px">Accepted · ASME IMECE 2026</span>
-              </div>
+              <div class="cv-inst">Robust Fault Diagnosis of Rotating Machinery Using Entropy-Augmented CNN in Time and Frequency Domains</div>
+              <div class="cv-dept"><strong>M. Park</strong>, C. X. Yang, J. Hu. ASME International Mechanical Engineering Congress and Exposition (IMECE) 2026<span class="card-badge badge-accepted badge-sm">Accepted</span></div>
+              <ul class="cv-list">
+                <li>Responsible for data preprocessing, model implementation, experimental evaluation, and manuscript drafting.</li>
+              </ul>
             </div>
             <div class="cv-date">2026</div>
           </div>
         </div>
 
         <div class="cv-section">
-          <h3>Research Experience</h3>
+          <h3>Awards</h3>
           <div class="cv-row">
             <div>
-              <div class="cv-inst">Resilient UAV Navigation under Sensor Dropout
-                <span class="card-badge badge-preparation" style="font-size:10px;padding:2px 8px;margin-left:8px">In Preparation</span>
-              </div>
-              <div class="cv-dept">University of North Dakota · Jan 2026 – Present</div>
-              <div class="cv-dept" style="margin-top:6px">Developed a UAV navigation policy resilient to sensor dropout, achieving up to 91–95% task completion rate and outperforming baseline models under intermittent sensor failure conditions. Manuscript in preparation, targeting IEEE IoT.</div>
+              <div class="cv-inst">Korea-U.S. Advanced Technology Youth Exchange Support Program</div>
+              <div class="cv-dept">Korea Institute for Advancement of Technology (KIAT) · 4th Cohort, Aerospace Track</div>
             </div>
-            <div class="cv-date">2026 –</div>
+            <div class="cv-date">2025</div>
           </div>
           <div class="cv-row">
             <div>
-              <div class="cv-inst">Robust Fault Diagnosis via Entropy-Augmented CNN
-                <span class="card-badge badge-accepted" style="font-size:10px;padding:2px 8px;margin-left:8px">Accepted · ASME IMECE 2026</span>
-              </div>
-              <div class="cv-dept">University of North Dakota · Jan – May 2026</div>
-              <div class="cv-dept" style="margin-top:6px">Developed a fault detection framework using entropy-based signal processing and CNN classification to identify mechanical imbalance and misalignment. Accepted at ASME IMECE 2026.</div>
-            </div>
-            <div class="cv-date">2026</div>
-          </div>
-          <div class="cv-row">
-            <div>
-              <div class="cv-inst">End-to-End RL-Based UAV Waypoint Navigation
-                <span class="card-badge badge-completed" style="font-size:10px;padding:2px 8px;margin-left:8px">Completed</span>
-              </div>
-              <div class="cv-dept">University of North Dakota · Jan – May 2026</div>
-              <div class="cv-dept" style="margin-top:6px">Developed an end-to-end RL-based navigation controller simulating Crazyflie UAV dynamics in PyBullet, implementing single and multi-waypoint goal tracking.</div>
-            </div>
-            <div class="cv-date">2026</div>
-          </div>
-          <div class="cv-row">
-            <div>
-              <div class="cv-inst">Multi-Anchor CNN with ToA Attention for UWB Indoor Localization
-                <span class="card-badge badge-completed" style="font-size:10px;padding:2px 8px;margin-left:8px">Completed</span>
-              </div>
-              <div class="cv-dept">Hanyang University · Sep – Dec 2025</div>
-              <div class="cv-dept" style="margin-top:6px">Developed a Multi-Anchor CNN model integrating ToA-based attention to estimate receiver position for UWB-based indoor localization.</div>
+              <div class="cv-inst">College of Engineering Leadership Scholarship</div>
+              <div class="cv-dept">Hanyang University</div>
             </div>
             <div class="cv-date">2025</div>
           </div>
         </div>
 
         <div class="cv-section">
-          <h3>Technical Skills</h3>
-          <div class="skills-wrap">
-            <span class="skill-pill">Python</span>
-            <span class="skill-pill">PyTorch</span>
-            <span class="skill-pill">CNN</span>
-            <span class="skill-pill">Reinforcement Learning (RL)</span>
-            <span class="skill-pill">Imitation Learning (IL)</span>
-            <span class="skill-pill">PyBullet</span>
-            <span class="skill-pill">Crazyflie Simulation</span>
-            <span class="skill-pill">MATLAB</span>
-            <span class="skill-pill">LTspice</span>
-            <span class="skill-pill">Multisim</span>
-            <span class="skill-pill">Arduino</span>
+          <h3>Skills</h3>
+          <div class="skill-group">
+            <div class="skill-label">Programming</div>
+            <div class="skills-wrap">
+              <span class="skill-pill">Python (PyTorch)</span>
+              <span class="skill-pill">MATLAB</span>
+              <span class="skill-pill">C/C++ (Basic)</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-label">AI &amp; Machine Learning</div>
+            <div class="skills-wrap">
+              <span class="skill-pill">CNN</span>
+              <span class="skill-pill">Reinforcement Learning (RL)</span>
+              <span class="skill-pill">Imitation Learning (IL)</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-label">Robotics &amp; Simulation</div>
+            <div class="skills-wrap">
+              <span class="skill-pill">PyBullet</span>
+              <span class="skill-pill">OpenAI Gym</span>
+              <span class="skill-pill">Crazyflie (simulation)</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-label">Hardware &amp; Circuits</div>
+            <div class="skills-wrap">
+              <span class="skill-pill">Arduino</span>
+              <span class="skill-pill">LTspice</span>
+              <span class="skill-pill">Multisim</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-label">Languages</div>
+            <div class="skills-wrap">
+              <span class="skill-pill">Korean (Native)</span>
+              <span class="skill-pill">English (Proficient)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <h3>Military Experience</h3>
+          <div class="cv-row">
+            <div>
+              <div class="cv-inst">Sergeant, Republic of Korea Air Force</div>
+              <div class="cv-dept">Completed mandatory military service (Honorable Discharge).</div>
+            </div>
+            <div class="cv-date">Feb 2022 – Nov 2023</div>
           </div>
         </div>
 
         <div style="margin-top:2rem">
-          <a class="pub-link" href="/files/CV_Minseok_Park_26.09.04.pdf" target="_blank">↓ Download full CV (PDF)</a>
+          <a class="pub-link" href="files/CV_Minseok_Park_26.10.26.pdf" target="_blank">↓ Download full CV (PDF)</a>
         </div>
+
       </div>
 
     </div>
   </div>
 </div>
 
-<!-- ── MODAL OVERLAY ── -->
+<!-- ===================== MODAL ===================== -->
 <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
-  <div class="modal" id="modalBox">
+  <div class="modal">
     <button class="modal-close" onclick="closeModal()">✕</button>
     <div id="modalContent"></div>
   </div>
 </div>
 
 <script>
+/* 프로젝트 팝업 내용: 여기서 수정하세요 */
 const projects = {
   uav: {
     badge: '<span class="card-badge badge-preparation">In Preparation</span>',
     title: 'Resilient UAV Navigation under Sensor Dropout',
-    meta: 'University of North Dakota · Jan 2026 – Present',
-    goal: 'To be updated',
-    detail: 'To be updated',
-    status: 'Manuscript in preparation, targeting IEEE IoT',
-    chips: ['Reinforcement Learning', 'Imitation Learning', 'PyBullet', 'Sensor Dropout']
+    meta: 'University of North Dakota · Mar 2026 – Present',
+    goal: 'Developed an auxiliary-learning-enhanced Decision Transformer for resilient UAV navigation under intermittent localization and range sensor dropout.',
+    detail: 'Achieved 88% success rate at 40% dropout probability, outperforming baseline models.',
+    status: 'Manuscript in preparation, targeting IEEE Internet of Things Journal.',
+    chips: ['Decision Transformer', 'Offline RL', 'Auxiliary Learning', 'PyBullet', 'Sensor Dropout']
   },
   eacnn: {
     badge: '<span class="card-badge badge-accepted">Accepted · ASME IMECE 2026</span>',
     title: 'Robust Fault Diagnosis of Rotating Machinery via Entropy-Augmented CNN',
-    meta: 'University of North Dakota · Jan – May 2026',
-    goal: 'Developed a fault detection framework for rotating machinery using entropy-based feature extraction and CNN classification to identify mechanical faults including unbalance and misalignment.',
-    detail: 'In the time domain, Multiscale Sample Entropy (MSE) features are extracted and fed into a CNN classifier. In the frequency domain, raw signals are passed through a separate CNN, then Shannon Spectral Entropy (SSE) features are extracted and concatenated with the CNN output before final classification. The combined framework achieved over 95% classification accuracy across three different rotational speeds.',
+    meta: 'University of North Dakota · Mar – May 2026',
+    goal: 'Developed a fault diagnosis framework for rotating machinery that combines entropy-based vibration features with CNN classification to identify shaft misalignment and rotor unbalance across multiple rotational speeds.',
+    detail: 'In the time domain, Multiscale Sample Entropy (MSE) was extracted together with statistical descriptors and fed into a CNN classifier. In the frequency domain, power spectral density inputs were passed through a CNN, and the learned features were concatenated with Shannon Spectral Entropy (SSE) before final classification. Both pipelines achieved over 95% classification accuracy across three rotational speeds. Responsible for data preprocessing, model implementation, experimental evaluation, and manuscript drafting.',
     status: 'Accepted at ASME International Mechanical Engineering Congress and Exposition (IMECE) 2026.',
-    chips: ['CNN', 'Signal Processing', 'Entropy Features', 'PyTorch', 'Fault Diagnosis']
+    chips: ['CNN', 'Multiscale Sample Entropy', 'Shannon Spectral Entropy', 'Signal Processing', 'PyTorch']
   },
   crazyflie: {
     badge: '<span class="card-badge badge-completed">Completed</span>',
     title: 'End-to-End RL-Based UAV Waypoint Navigation',
-    meta: 'University of North Dakota · Jan – May 2026',
+    meta: 'University of North Dakota · Jan – Mar 2026',
     goal: 'Developed an end-to-end RL-based navigation controller for Crazyflie UAV simulation, enabling single-waypoint and multi-waypoint goal tracking.',
-    detail: 'Augmented the state space of an existing circular path-following model to support goal-directed flight. Implemented single-waypoint hovering and multi-waypoint navigation, where a drone spawning at the center sequentially visits two randomly placed waypoints, hovering at each for a set duration. Presented results at a formal lab presentation.',
+    detail: 'Augmented the state space of an existing circular path-following controller with goal position to support goal-directed flight. Progressed from single-waypoint hovering to multi-waypoint navigation, where a drone spawning at the center sequentially visits two randomly placed waypoints, hovering at each for a set duration. Presented results at a formal lab presentation.',
     status: 'Completed.',
-    chips: ['PPO', 'PyBullet', 'OpenAI Gym', 'Crazyflie Simulation', 'Waypoint Navigation']
-  },
-  skeleton: {
-    badge: '<span class="card-badge badge-completed">Completed</span>',
-    title: 'Skeleton Detection & Thickness Estimation via Multi-Task CNN',
-    meta: 'University of North Dakota · Jan – May 2026',
-    goal: 'Reproduced the DeepSkeleton algorithm to analyze its multi-task CNN architecture for skeleton localization and scale prediction from natural images.',
-    detail: 'Debugged and ran the existing codebase to successfully extract object skeletons using the SK506 dataset. Presented the algorithm architecture and data processing pipeline a biweekly lab meeting.',
-    status: 'Completed.',
-    chips: ['Multi-task CNN', 'VGG16', 'Skeleton Detection', 'Thickness Estimation', 'PyTorch']
+    chips: ['Reinforcement Learning', 'PPO', 'PyBullet', 'OpenAI Gym', 'Crazyflie (simulation)']
   },
   uwb: {
     badge: '<span class="card-badge badge-completed">Completed</span>',
     title: 'Multi-Anchor CNN with ToA Attention for UWB Indoor Localization',
     meta: 'Hanyang University · Sep – Dec 2025',
     goal: 'Developed a CNN-based indoor localization model using UWB signals from multiple anchors to estimate receiver position with improved NLoS robustness.',
-    detail: 'Designed a Multi-Anchor CNN that processes Channel Impulse Response (CIR) and Time of Arrival (ToA) signals from 8 access points simultaneously. Integrated a ToA-based Softmax Attention mechanism to suppress Non-Line-of-Sight (NLoS) interference. Achieved RMSE of 1.439m, below the 1.5m commercialization target.',
+    detail: 'Designed a Multi-Anchor CNN that processes Channel Impulse Response (CIR) and Time of Arrival (ToA) signals from 8 access points. Integrated a ToA-based Softmax Attention mechanism to suppress Non-Line-of-Sight (NLoS) interference. Achieved RMSE of 1.439m, below the 1.5m commercialization target.',
     status: 'Completed as a course project.',
-    chips: ['CNN', 'UWB', 'ToA', 'Softmax Attention', 'NLoS Mitigation', 'PyTorch']
+    chips: ['CNN', 'UWB', 'ToA', 'Softmax Attention', 'PyTorch']
+  },
+  skeleton: {
+    badge: '<span class="card-badge badge-completed">Completed</span>',
+    title: 'Object Skeleton Extraction via Multi-Task CNN',
+    meta: 'University of North Dakota · Spring 2026',
+    goal: 'Reproduced the DeepSkeleton algorithm to analyze its multi-task CNN architecture for skeleton localization and scale prediction from natural images.',
+    detail: 'Debugged and ran the existing codebase to successfully extract object skeletons using the SK506 dataset. Presented the algorithm architecture and data processing pipeline at a biweekly lab meeting.',
+    status: 'Completed.',
+    chips: ['Multi-task CNN', 'VGG16', 'Skeleton Extraction', 'PyTorch']
   }
 };
 
@@ -718,16 +742,13 @@ function openModal(id) {
   document.getElementById('modalOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-
 function closeModal() {
   document.getElementById('modalOverlay').classList.remove('open');
   document.body.style.overflow = '';
 }
-
 function closeModalOutside(e) {
   if (e.target === document.getElementById('modalOverlay')) closeModal();
 }
-
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
 function showTab(name, el) {
