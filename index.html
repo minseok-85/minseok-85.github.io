@@ -325,7 +325,7 @@
               </video>
             </div>
             <div class="card-body">
-              <span class="card-badge badge-preparation">In Preparation</span>
+              <span class="card-badge badge-review">Under Review · IEEE IoT-J</span>
               <div class="card-title">Resilient UAV Navigation under Sensor Dropout</div>
               <div class="card-desc">Developed an auxiliary-learning-enhanced Decision Transformer for resilient UAV navigation under intermittent sensor dropout, achieving 88% success rate at a 40% dropout probability compared with 33% for the standard Decision Transformer.</div>
               <div class="card-chips">
@@ -378,10 +378,17 @@
         </div>
       </div>
 
-      <!-- ===================== PUBLICATIONS ===================== -->
+      <!-- ===================== PUBLICATIONS ===================== --> 
       <div class="tab-section" id="tab-publications">
         <div class="section-label" style="margin-bottom:1.2rem">Publications</div>
         <div class="pub-list">
+          <div class="pub-card">
+            <div class="pub-title-text">ADT-UAV: Auxiliary-Learning-Enhanced Decision Transformer for Resilient UAV Navigation under Intermittent Sensor Dropout</div>
+            <div class="pub-venue"><strong>M. Park</strong>, J. Zhang, Y. Pang, J. Hu</div>
+            <div class="pub-links">
+              <span class="card-badge badge-review" style="font-size:10px;margin:0">Under Review · IEEE Internet of Things Journal</span>
+            </div>
+          </div>
           <div class="pub-card">
             <div class="pub-title-text">Robust Fault Diagnosis of Rotating Machinery Using Entropy-Augmented CNN in Time and Frequency Domains</div>
             <div class="pub-venue"><strong>M. Park</strong>, C. X. Yang, J. Hu</div>
@@ -405,7 +412,7 @@
               </video>
             </div>
             <div class="card-body">
-              <span class="card-badge badge-preparation">In Preparation</span>
+              <span class="card-badge badge-review">Under Review · IEEE IoT-J</span>
               <div class="card-title">Resilient UAV Navigation under Sensor Dropout</div>
               <div class="card-desc">Developed an auxiliary-learning-enhanced Decision Transformer for resilient UAV navigation under intermittent sensor dropout, achieving 88% success rate at a 40% dropout probability compared with 33% for the standard Decision Transformer.</div>
               <div class="card-chips">
@@ -527,11 +534,10 @@
           <div class="cv-subnote">Advisor: Prof. Jueming Hu (now at University of Oklahoma)</div>
           <div class="cv-row">
             <div>
-              <div class="cv-inst">Resilient UAV Navigation under Sensor Dropout<span class="card-badge badge-preparation badge-sm">In Preparation</span></div>
+              <div class="cv-inst">Resilient UAV Navigation under Sensor Dropout<span class="card-badge badge-review badge-sm">Under Review</span></div>
               <ul class="cv-list">
                 <li>Developed an auxiliary-learning-enhanced Decision Transformer for resilient UAV navigation under intermittent sensor dropout.</li>
                 <li>Achieved 88% and 77% success rates at a 40% dropout probability for short and long dropout durations, compared with 33% and 19% for the standard Decision Transformer.</li>
-                <li>Manuscript in preparation, targeting IEEE Internet of Things Journal.</li>
               </ul>
             </div>
             <div class="cv-date">Mar 2026 – Present</div>
@@ -570,13 +576,23 @@
         </div>
 
         <div class="cv-section">
-          <h3>Publication</h3>
+          <h3>Publications</h3>
           <div class="cv-row">
             <div>
               <div class="cv-inst">Robust Fault Diagnosis of Rotating Machinery Using Entropy-Augmented CNN in Time and Frequency Domains</div>
               <div class="cv-dept"><strong>M. Park</strong>, C. X. Yang, J. Hu. ASME International Mechanical Engineering Congress and Exposition (IMECE) 2026<span class="card-badge badge-accepted badge-sm">Accepted</span></div>
               <ul class="cv-list">
                 <li>Responsible for data preprocessing, model implementation, experimental evaluation, and manuscript drafting.</li>
+              </ul>
+            </div>
+            <div class="cv-date">2026</div>
+          </div>
+          <div class="cv-row">
+            <div>
+              <div class="cv-inst">ADT-UAV: Auxiliary-Learning-Enhanced Decision Transformer for Resilient UAV Navigation under Intermittent Sensor Dropout</div>
+              <div class="cv-dept"><strong>M. Park</strong>, J. Zhang, Y. Pang, J. Hu. IEEE Internet of Things Journal<span class="card-badge badge-review badge-sm">Under Review</span></div>
+              <ul class="cv-list">
+                <li>Responsible for framework design, environment development, model training, experimental evaluation, and manuscript drafting.</li>
               </ul>
             </div>
             <div class="cv-date">2026</div>
@@ -676,12 +692,12 @@
 <script>
 const projects = {
   uav: {
-    badge: '<span class="card-badge badge-preparation">In Preparation</span>',
+    badge: '<span class="card-badge badge-review">Under Review · IEEE IoT-J</span>',
     title: 'Resilient UAV Navigation under Sensor Dropout',
     meta: 'University of North Dakota · Mar 2026 – Present',
     goal: 'Developed an auxiliary-learning-enhanced Decision Transformer for resilient UAV navigation under intermittent sensor dropout.',
     detail: 'Achieved 88% and 77% success rates at a 40% dropout probability for short and long dropout durations, compared with 33% and 19% for the standard Decision Transformer.',
-    status: 'Manuscript in preparation, targeting IEEE Internet of Things Journal.',
+    status: 'Under review at IEEE Internet of Things Journal.',
     chips: ['Decision Transformer', 'Offline RL', 'Auxiliary Learning', 'PyBullet', 'Sensor Dropout']
   },
   eacnn: {
