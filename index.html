@@ -154,7 +154,9 @@
   .card-desc  { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 8px; }
   .card-chips { display: flex; flex-wrap: wrap; gap: 4px; }
   .chip { font-size: 11px; font-family: var(--font-mono); padding: 2px 7px; border-radius: 3px; background: var(--bg); color: var(--subtle); border: 1px solid var(--border); }
-
+  .proj-group + .proj-group { margin-top: 2.2rem; }
+  .project-card.text-only .card-body { padding: 18px 20px; }
+  
   /* PUBLICATIONS */
   .pub-list { display: flex; flex-direction: column; gap: 12px; }
   .pub-card {
@@ -348,38 +350,6 @@
               </div>
             </div>
           </div>
-         <!-- RM-UAV -->
-          <div class="project-card" onclick="openModal('seqrl')">
-            <div class="card-img">
-              <div class="card-img-placeholder">
-                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-                <span>to be updated</span>
-              </div>
-            </div>
-            <div class="card-body">
-              <span class="card-badge badge-progress">In Progress</span>
-              <div class="card-title">Sequential Multi-Phase UAV Navigation via End-to-End RL</div>
-              <div class="card-desc">To be updated.</div>
-            </div>
-          </div>
-         
-          <!-- EACNN -->
-          <div class="project-card" onclick="openModal('eacnn')">
-            <div class="card-img">
-              <img src="images/EACNN-FD_flowchart_final.png" alt="EACNN-FD framework">
-            </div>
-            <div class="card-body">
-              <span class="card-badge badge-presented">Presented · ASME IMECE 2026</span>
-              <div class="card-title">Robust Fault Diagnosis of Rotating Machinery via Entropy-Augmented CNN</div>
-              <div class="card-desc">Developed an entropy-augmented CNN framework with time-domain and frequency-domain pipelines to diagnose shaft misalignment and rotor unbalance, achieving over 95% accuracy at three rotational speeds.</div>
-              <div class="card-chips">
-                <span class="chip">CNN</span>
-                <span class="chip">Entropy Features</span>
-                <span class="chip">Signal Processing</span>
-                <span class="chip">PyTorch</span>
-              </div>
-            </div>
-          </div>
 
           <!-- CRAZYFLIE -->
           <div class="project-card" onclick="openModal('crazyflie')">
@@ -397,6 +367,24 @@
                 <span class="chip">PPO</span>
                 <span class="chip">PyBullet</span>
                 <span class="chip">OpenAI Gym</span>
+              </div>
+            </div>
+          </div>
+         
+          <!-- EACNN -->
+          <div class="project-card" onclick="openModal('eacnn')">
+            <div class="card-img">
+              <img src="images/EACNN-FD_flowchart_final.png" alt="EACNN-FD framework">
+            </div>
+            <div class="card-body">
+              <span class="card-badge badge-presented">Presented · ASME IMECE 2026</span>
+              <div class="card-title">Robust Fault Diagnosis of Rotating Machinery via Entropy-Augmented CNN</div>
+              <div class="card-desc">Developed an entropy-augmented CNN framework with time-domain and frequency-domain pipelines to diagnose shaft misalignment and rotor unbalance, achieving over 95% accuracy at three rotational speeds.</div>
+              <div class="card-chips">
+                <span class="chip">CNN</span>
+                <span class="chip">Entropy Features</span>
+                <span class="chip">Signal Processing</span>
+                <span class="chip">PyTorch</span>
               </div>
             </div>
           </div>
@@ -428,112 +416,128 @@
 
       <!-- ===================== PROJECTS ===================== -->
       <div class="tab-section" id="tab-projects">
-        <div class="section-label" style="margin-bottom:1.2rem">All Projects</div>
-        <div class="project-grid">
 
-          <div class="project-card" onclick="openModal('uav')">
-            <div class="card-img">
-              <video autoplay loop muted playsinline style="object-fit:contain;">
-                <source src="images/UAV_path_planning_final.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="card-body">
-              <span class="card-badge badge-review">Under Review · IEEE IoT-J</span>
-              <div class="card-title">Resilient UAV Navigation under Sensor Dropout</div>
-              <div class="card-desc">Developed an auxiliary-learning-enhanced Decision Transformer for resilient UAV navigation under intermittent sensor dropout, achieving 88% success rate at a 40% dropout probability compared with 33% for the standard Decision Transformer.</div>
-              <div class="card-chips">
-                <span class="chip">Decision Transformer</span>
-                <span class="chip">Offline RL</span>
-                <span class="chip">Auxiliary Learning</span>
-                <span class="chip">PyBullet</span>
+        <!-- IN PROGRESS -->
+        <div class="proj-group">
+          <div class="section-label">In Progress</div>
+          <div class="project-grid">
+            <div class="project-card text-only" onclick="openModal('seqrl')">
+              <div class="card-body">
+                <span class="card-badge badge-progress">In Progress</span>
+                <div class="card-title">Sequential Multi-Phase UAV Navigation via End-to-End RL</div>
+                <div class="card-desc">Developing an end-to-end RL policy that completes sequential navigation tasks by structuring the reward around task phases, extending the End-to-End RL-Based UAV Waypoint Navigation project.</div>
+                <div class="card-chips">
+                  <span class="chip">Reinforcement Learning</span>
+                  <span class="chip">PyBullet</span>
+                  <span class="chip">Crazyflie (simulation)</span>
+                </div>
               </div>
             </div>
           </div>
-
-          <div class="project-card" onclick="openModal('seqrl')">
-            <div class="card-img">
-              <div class="card-img-placeholder">
-                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-                <span>to be updated</span>
-              </div>
-            </div>
-            <div class="card-body">
-              <span class="card-badge badge-progress">In Progress</span>
-              <div class="card-title">Sequential Multi-Phase UAV Navigation via End-to-End RL</div>
-              <div class="card-desc">To be updated.</div>
-            </div>
-          </div>
-
-          <div class="project-card" onclick="openModal('eacnn')">
-            <div class="card-img">
-              <img src="images/EACNN-FD_flowchart_final.png" alt="EACNN-FD framework">
-            </div>
-            <div class="card-body">
-              <span class="card-badge badge-presented">Presented · ASME IMECE 2026</span>
-              <div class="card-title">Robust Fault Diagnosis of Rotating Machinery via Entropy-Augmented CNN</div>
-              <div class="card-desc">Developed an entropy-augmented CNN framework with time-domain and frequency-domain pipelines to diagnose shaft misalignment and rotor unbalance, achieving over 95% accuracy at three rotational speeds.</div>
-              <div class="card-chips">
-                <span class="chip">CNN</span>
-                <span class="chip">Entropy Features</span>
-                <span class="chip">Signal Processing</span>
-                <span class="chip">PyTorch</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card" onclick="openModal('crazyflie')">
-            <div class="card-img">
-              <video autoplay loop muted playsinline style="object-fit:cover;">
-                <source src="images/crazyflie_final.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="card-body">
-              <span class="card-badge badge-completed">Completed</span>
-              <div class="card-title">End-to-End RL-Based UAV Waypoint Navigation</div>
-              <div class="card-desc">Developed an end-to-end RL policy in a Crazyflie PyBullet simulation, progressing from single-waypoint hovering to sequential multi-waypoint navigation with randomized goal spawning.</div>
-              <div class="card-chips">
-                <span class="chip">Reinforcement Learning</span>
-                <span class="chip">PPO</span>
-                <span class="chip">PyBullet</span>
-                <span class="chip">OpenAI Gym</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card" onclick="openModal('uwb')">
-            <div class="card-img">
-              <img src="images/UWB_final.png" alt="UWB indoor localization">
-            </div>
-            <div class="card-body">
-              <span class="card-badge badge-completed">Completed</span>
-              <div class="card-title">Multi-Anchor CNN with ToA Attention for UWB Indoor Localization</div>
-              <div class="card-desc">Designed and implemented a Multi-Anchor CNN integrating ToA-based Softmax Attention to suppress NLoS interference in UWB indoor localization.</div>
-              <div class="card-chips">
-                <span class="chip">CNN</span>
-                <span class="chip">UWB</span>
-                <span class="chip">Softmax Attention</span>
-                <span class="chip">PyTorch</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card" onclick="openModal('skeleton')">
-            <div class="card-img">
-              <img src="images/deepskeleton_demo.png" alt="Skeleton extraction result">
-            </div>
-            <div class="card-body">
-              <span class="card-badge badge-completed">Completed</span>
-              <div class="card-title">Object Skeleton Extraction via Multi-Task CNN</div>
-              <div class="card-desc">Reproduced and debugged the DeepSkeleton algorithm to extract object skeletons from natural images using a multi-task CNN.</div>
-              <div class="card-chips">
-                <span class="chip">Multi-task CNN</span>
-                <span class="chip">VGG16</span>
-                <span class="chip">PyTorch</span>
-              </div>
-            </div>
-          </div>
-
         </div>
+
+        <!-- UNDER REVIEW -->
+        <div class="proj-group">
+          <div class="section-label">Under Review</div>
+          <div class="project-grid">
+            <div class="project-card" onclick="openModal('uav')">
+              <div class="card-img">
+                <video autoplay loop muted playsinline style="object-fit:contain;">
+                  <source src="images/UAV_path_planning_final.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="card-body">
+                <span class="card-badge badge-review">Under Review · IEEE IoT-J</span>
+                <div class="card-title">Resilient UAV Navigation under Sensor Dropout</div>
+                <div class="card-desc">Developed an auxiliary-learning-enhanced Decision Transformer for resilient UAV navigation under intermittent sensor dropout, achieving 88% success rate at a 40% dropout probability compared with 33% for the standard Decision Transformer.</div>
+                <div class="card-chips">
+                  <span class="chip">Decision Transformer</span>
+                  <span class="chip">Offline RL</span>
+                  <span class="chip">Auxiliary Learning</span>
+                  <span class="chip">PyBullet</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COMPLETED -->
+        <div class="proj-group">
+          <div class="section-label">Completed</div>
+          <div class="project-grid">
+
+            <div class="project-card" onclick="openModal('eacnn')">
+              <div class="card-img">
+                <img src="images/EACNN-FD_flowchart_final.png" alt="EACNN-FD framework">
+              </div>
+              <div class="card-body">
+                <span class="card-badge badge-presented">Presented · ASME IMECE 2026</span>
+                <div class="card-title">Robust Fault Diagnosis of Rotating Machinery via Entropy-Augmented CNN</div>
+                <div class="card-desc">Developed an entropy-augmented CNN framework with time-domain and frequency-domain pipelines to diagnose shaft misalignment and rotor unbalance, achieving over 95% accuracy at three rotational speeds.</div>
+                <div class="card-chips">
+                  <span class="chip">CNN</span>
+                  <span class="chip">Entropy Features</span>
+                  <span class="chip">Signal Processing</span>
+                  <span class="chip">PyTorch</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('crazyflie')">
+              <div class="card-img">
+                <video autoplay loop muted playsinline style="object-fit:cover;">
+                  <source src="images/crazyflie_final.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="card-body">
+                <span class="card-badge badge-completed">Completed</span>
+                <div class="card-title">End-to-End RL-Based UAV Waypoint Navigation</div>
+                <div class="card-desc">Developed an end-to-end RL policy in a Crazyflie PyBullet simulation, progressing from single-waypoint hovering to sequential multi-waypoint navigation with randomized goal spawning.</div>
+                <div class="card-chips">
+                  <span class="chip">Reinforcement Learning</span>
+                  <span class="chip">PPO</span>
+                  <span class="chip">PyBullet</span>
+                  <span class="chip">OpenAI Gym</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('skeleton')">
+              <div class="card-img">
+                <img src="images/deepskeleton_demo.png" alt="Skeleton extraction result">
+              </div>
+              <div class="card-body">
+                <span class="card-badge badge-completed">Completed</span>
+                <div class="card-title">Object Skeleton Extraction via Multi-Task CNN</div>
+                <div class="card-desc">Reproduced and debugged the DeepSkeleton algorithm to extract object skeletons from natural images using a multi-task CNN.</div>
+                <div class="card-chips">
+                  <span class="chip">Multi-task CNN</span>
+                  <span class="chip">VGG16</span>
+                  <span class="chip">PyTorch</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('uwb')">
+              <div class="card-img">
+                <img src="images/UWB_final.png" alt="UWB indoor localization">
+              </div>
+              <div class="card-body">
+                <span class="card-badge badge-completed">Completed</span>
+                <div class="card-title">Multi-Anchor CNN with ToA Attention for UWB Indoor Localization</div>
+                <div class="card-desc">Implemented a Multi-Anchor CNN integrating ToA-based Softmax Attention to suppress NLoS interference in UWB indoor localization.</div>
+                <div class="card-chips">
+                  <span class="chip">CNN</span>
+                  <span class="chip">UWB</span>
+                  <span class="chip">Softmax Attention</span>
+                  <span class="chip">PyTorch</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
 
       <!-- ===================== CV ===================== -->
