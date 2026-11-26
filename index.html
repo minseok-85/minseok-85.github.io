@@ -104,6 +104,7 @@
     text-transform: uppercase; color: var(--subtle); margin-bottom: 0.75rem;
   }
   .about-band p { font-size: 16px; color: var(--muted); line-height: 1.8; }
+  .about-band p + p { margin-top: 0.9rem; }
   .about-band p strong { color: var(--text); font-weight: 600; }
   .interest-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
   .interest {
@@ -141,11 +142,12 @@
     font-size: 11px; font-family: var(--font-mono); font-weight: 500;
     padding: 2px 8px; border-radius: 3px; margin-bottom: 6px; display: inline-block;
   }
-  .badge-accepted    { background: #ecfdf5; color: #166534; border: 1px solid #bbf7d0; }
+  .badge-preparation { background: #f8fafc; color: #475569; border: 1px solid #e2e8f0; }
+  .badge-progress    { background: #fff7ed; color: #c2410c; border: 1px solid #fed7aa; }
   .badge-review      { background: #fefce8; color: #a16207; border: 1px solid #fde68a; }
-  .badge-progress    { background: var(--bg); color: var(--subtle); border: 1px solid var(--border); }
+  .badge-accepted    { background: #ecfdf5; color: #166534; border: 1px solid #bbf7d0; }
+  .badge-presented   { background: #fdf4ff; color: #7e22ce; border: 1px solid #e9d5ff; }
   .badge-completed   { background: #f0f9ff; color: #0369a1; border: 1px solid #bae6fd; }
-  .badge-preparation { background: #fdf4ff; color: #7e22ce; border: 1px solid #e9d5ff; }
   .badge-sm { font-size: 10px; padding: 2px 8px; margin: 0 0 0 8px; vertical-align: middle; }
 
   .card-title { font-size: 15px; font-weight: 600; line-height: 1.35; margin-bottom: 4px; }
@@ -263,7 +265,7 @@
 
   <!-- ===================== SIDEBAR ===================== -->
   <aside class="sidebar">
-    <div class="avatar"><img src="images/profile1.png" alt="Minseok Park"></div>
+    <div class="avatar"><img src="images/profile_11.26.png" alt="Minseok Park"></div>
     <div class="sidebar-name">Minseok Park</div>
     <div class="sidebar-role">Undergraduate Researcher<br>Hanyang Univ. · UND</div>
     <div class="sidebar-links">
@@ -275,7 +277,7 @@
         <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn
       </a>
-      <a class="sidebar-link" href="files/Minseok_Park_CV_26.11.17.pdf" target="_blank">
+      <a class="sidebar-link" href="files/Minseok_Park_CV_26.11.26.pdf" target="_blank">
         <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         CV (PDF)
       </a>
@@ -299,13 +301,23 @@
         <div class="about-band">
           <h2>About me</h2>
           <p>
-            I am an undergraduate student at <strong>Hanyang University</strong>, Korea
-            (B.S. Electronic Engineering, expected Feb 2027).
-            During my exchange semester at the <strong>University of North Dakota</strong> (Jan–May 2026),
-            I joined Prof. Jueming Hu's lab as an undergraduate researcher and have continued this research since.
-            My current work focuses on <strong>resilient UAV navigation under sensor dropout</strong>
-            using offline reinforcement learning.
-            I am highly interested in pursuing a PhD starting in <strong>Fall 2027</strong>.
+            I am a senior studying electronic engineering at <strong>Hanyang University</strong> in South Korea
+            and expect to graduate in February 2027. I work with <strong>Professor Jueming Hu</strong>,
+            whose lab I joined as an undergraduate researcher during my exchange semester
+            at the University of North Dakota in spring 2026.
+          </p>
+          <p>
+            My research focuses on <strong>UAV autonomy</strong>. I study how aerial robots can navigate
+            reliably when sensor readings are missing or unreliable. My work draws on
+            imitation learning and reinforcement learning.
+          </p>
+          <p>
+            My recent work on UAV navigation under intermittent sensor dropout is under review at
+            IEEE Internet of Things Journal, and my work on fault diagnosis of rotating machinery
+            was presented at ASME IMECE 2026.
+          </p>
+          <p>
+            I am applying to PhD programs for fall 2027.
           </p>
           <div class="interest-row">
             <span class="interest">UAV Autonomy</span>
@@ -336,14 +348,28 @@
               </div>
             </div>
           </div>
-
+         <!-- RM-UAV -->
+          <div class="project-card" onclick="openModal('seqrl')">
+            <div class="card-img">
+              <div class="card-img-placeholder">
+                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                <span>to be updated</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <span class="card-badge badge-progress">In Progress</span>
+              <div class="card-title">Sequential Multi-Phase UAV Navigation via End-to-End RL</div>
+              <div class="card-desc">To be updated.</div>
+            </div>
+          </div>
+         
           <!-- EACNN -->
           <div class="project-card" onclick="openModal('eacnn')">
             <div class="card-img">
               <img src="images/EACNN-FD_flowchart_final.png" alt="EACNN-FD framework">
             </div>
             <div class="card-body">
-              <span class="card-badge badge-accepted">Accepted · ASME IMECE 2026</span>
+              <span class="card-badge badge-presented">Presented · ASME IMECE 2026</span>
               <div class="card-title">Robust Fault Diagnosis of Rotating Machinery via Entropy-Augmented CNN</div>
               <div class="card-desc">Developed an entropy-augmented CNN framework with time-domain and frequency-domain pipelines to diagnose shaft misalignment and rotor unbalance, achieving over 95% accuracy at three rotational speeds.</div>
               <div class="card-chips">
@@ -384,7 +410,7 @@
         <div class="pub-list">
           <div class="pub-card">
             <div class="pub-title-text">ADT-UAV: Auxiliary-Learning-Enhanced Decision Transformer for Resilient UAV Navigation under Intermittent Sensor Dropout</div>
-            <div class="pub-venue"><strong>M. Park</strong>, J. Zhang, Y. Pang, J. Hu</div>
+            <div class="pub-venue"><strong>M. Park</strong>, Y. Pang, J. Zhang, J. Hu</div>
             <div class="pub-links">
               <span class="card-badge badge-review" style="font-size:10px;margin:0">Under Review · IEEE Internet of Things Journal</span>
             </div>
@@ -393,7 +419,7 @@
             <div class="pub-title-text">Robust Fault Diagnosis of Rotating Machinery Using Entropy-Augmented CNN in Time and Frequency Domains</div>
             <div class="pub-venue"><strong>M. Park</strong>, C. X. Yang, J. Hu</div>
             <div class="pub-links">
-              <span class="card-badge badge-accepted" style="font-size:10px;margin:0">Accepted · ASME IMECE 2026</span>
+              <span class="card-badge badge-presented" style="font-size:10px;margin:0">Presented · ASME IMECE 2026</span>
               <span class="pub-link disabled">PDF (coming soon)</span>
             </div>
           </div>
@@ -424,12 +450,26 @@
             </div>
           </div>
 
+          <div class="project-card" onclick="openModal('seqrl')">
+            <div class="card-img">
+              <div class="card-img-placeholder">
+                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                <span>to be updated</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <span class="card-badge badge-progress">In Progress</span>
+              <div class="card-title">Sequential Multi-Phase UAV Navigation via End-to-End RL</div>
+              <div class="card-desc">To be updated.</div>
+            </div>
+          </div>
+
           <div class="project-card" onclick="openModal('eacnn')">
             <div class="card-img">
               <img src="images/EACNN-FD_flowchart_final.png" alt="EACNN-FD framework">
             </div>
             <div class="card-body">
-              <span class="card-badge badge-accepted">Accepted · ASME IMECE 2026</span>
+              <span class="card-badge badge-presented">Presented · ASME IMECE 2026</span>
               <div class="card-title">Robust Fault Diagnosis of Rotating Machinery via Entropy-Augmented CNN</div>
               <div class="card-desc">Developed an entropy-augmented CNN framework with time-domain and frequency-domain pipelines to diagnose shaft misalignment and rotor unbalance, achieving over 95% accuracy at three rotational speeds.</div>
               <div class="card-chips">
@@ -514,9 +554,9 @@
             <div>
               <div class="cv-inst">Hanyang University</div>
               <div class="cv-dept">B.S. Electronic Engineering · Seoul, Republic of Korea</div>
-              <div class="cv-gpa">GPA 3.84 / 4.0</div>
+              <div class="cv-gpa">GPA 3.84 / 4.0 · Class Rank 14/179</div>
               <ul class="cv-list">
-                <li>Director of Planning, Department of Electronic Engineering Student Council (Jan – Dec 2025)</li>
+                <li>Capstone: Robust Fault Diagnosis of Rotating Machinery via Entropy-Augmented CNN (Advisor: Prof. Yoonseon Oh)</li>
               </ul>
             </div>
             <div class="cv-date">Mar 2021 – Feb 2027 (Expected)</div>
@@ -543,17 +583,17 @@
                 <li>Achieved 88% and 77% success rates at a 40% dropout probability for short and long dropout durations, compared with 33% and 19% for the standard Decision Transformer.</li>
               </ul>
             </div>
-            <div class="cv-date">Mar 2026 – Present</div>
+            <div class="cv-date">Mar – Nov 2026</div>
           </div>
           <div class="cv-row">
             <div>
-              <div class="cv-inst">Robust Fault Diagnosis of Rotating Machinery via Entropy-Augmented CNN<span class="card-badge badge-accepted badge-sm">Accepted · ASME IMECE 2026</span></div>
+              <div class="cv-inst">Sequential Multi-Phase UAV Navigation via End-to-End RL<span class="card-badge badge-progress badge-sm">In Progress</span></div>
               <ul class="cv-list">
-                <li>Developed an entropy-augmented CNN framework with time-domain (multiscale sample entropy) and frequency-domain (Shannon spectral entropy) pipelines to diagnose shaft misalignment and rotor unbalance.</li>
-                <li>Achieved over 95% classification accuracy at three rotational speeds on a machine fault simulator testbed.</li>
+                <li>Developing an end-to-end RL policy that completes sequential navigation tasks by structuring the reward around task phases.</li>
+                <li>Currently in progress, extending the End-to-End RL-Based UAV Waypoint Navigation project.</li>
               </ul>
             </div>
-            <div class="cv-date">Mar – May 2026</div>
+            <div class="cv-date">Mar 2026 – Present</div>
           </div>
           <div class="cv-row">
             <div>
@@ -564,6 +604,18 @@
               </ul>
             </div>
             <div class="cv-date">Jan – Mar 2026</div>
+          </div>
+          <div class="cv-row">
+            <div>
+              <div class="cv-inst">Robust Fault Diagnosis of Rotating Machinery via Entropy-Augmented CNN
+                <span class="card-badge badge-presented badge-sm">Presented · ASME IMECE 2026</span>
+              </div>
+              <ul class="cv-list">
+                <li>Developed an entropy-augmented CNN framework with time-domain (multiscale sample entropy) and frequency-domain (Shannon spectral entropy) pipelines to diagnose shaft misalignment and rotor unbalance.</li>
+                <li>Achieved over 95% classification accuracy at three rotational speeds on a machine fault simulator testbed.</li>
+              </ul>
+            </div>
+            <div class="cv-date">Mar – May 2026</div>
           </div>
 
           <div class="cv-subhead" style="margin-top:18px">Coursework Project · Hanyang University</div>
@@ -583,17 +635,19 @@
           <div class="cv-row">
             <div>
               <div class="cv-inst">Robust Fault Diagnosis of Rotating Machinery Using Entropy-Augmented CNN in Time and Frequency Domains</div>
-              <div class="cv-dept"><strong>M. Park</strong>, C. X. Yang, J. Hu. ASME International Mechanical Engineering Congress and Exposition (IMECE) 2026<span class="card-badge badge-accepted badge-sm">Accepted</span></div>
+              <div class="cv-dept"><strong>M. Park</strong>, C. X. Yang, J. Hu. ASME International Mechanical Engineering Congress and Exposition (IMECE) 2026
+                <span class="card-badge badge-presented badge-sm">Presented</span>
+              </div>
               <ul class="cv-list">
                 <li>Responsible for data preprocessing, model implementation, experimental evaluation, and manuscript drafting.</li>
               </ul>
             </div>
-            <div class="cv-date">Aug 2026</div>
+            <div class="cv-date">Nov 2026</div>
           </div>
           <div class="cv-row">
             <div>
               <div class="cv-inst">ADT-UAV: Auxiliary-Learning-Enhanced Decision Transformer for Resilient UAV Navigation under Intermittent Sensor Dropout</div>
-              <div class="cv-dept"><strong>M. Park</strong>, J. Zhang, Y. Pang, J. Hu. IEEE Internet of Things Journal (IoT-J)<span class="card-badge badge-review badge-sm">Under Review</span></div>
+              <div class="cv-dept"><strong>M. Park</strong>, Y. Pang, J. Zhang, J. Hu. IEEE Internet of Things Journal (IoT-J)<span class="card-badge badge-review badge-sm">Under Review</span></div>
               <ul class="cv-list">
                 <li>Responsible for framework design, environment development, model training, experimental evaluation, and manuscript drafting.</li>
               </ul>
@@ -603,7 +657,7 @@
         </div>
 
         <div class="cv-section">
-          <h3>Awards</h3>
+          <h3>Honors &amp; Awards</h3>
           <div class="cv-row">
             <div>
               <div class="cv-inst">Korea-U.S. Advanced Technology Youth Exchange Support Program</div>
@@ -616,13 +670,51 @@
           </div>
           <div class="cv-row">
             <div>
-              <div class="cv-inst">College of Engineering Leadership Scholarship</div>
+              <div class="cv-inst">College Leadership Scholarship</div>
               <div class="cv-dept">Hanyang University</div>
               <ul class="cv-list">
                 <li>Awarded for serving as class representative of the Department of Electronic Engineering.</li>
               </ul>
             </div>
             <div class="cv-date">Sep 2025</div>
+          </div>
+        </div>
+       
+        <div class="cv-section">
+          <h3>Leadership &amp; Service</h3>
+          <div class="cv-row">
+            <div>
+              <div class="cv-inst">Director of Planning, Department of Electronic Engineering Student Council</div>
+              <div class="cv-dept">Hanyang University</div>
+              <ul class="cv-list">
+                <li>Organized an alumni lecture event and divided responsibilities, including alumni outreach and budget management.</li>
+              </ul>
+            </div>
+            <div class="cv-date">Jan – Dec 2025</div>
+          </div>
+          <div class="cv-row">
+            <div>
+              <div class="cv-inst">Class Representative, Department of Electronic Engineering</div>
+              <div class="cv-dept">Hanyang University</div>
+              <ul class="cv-list">
+                <li>Represented the department at the College of Engineering and university-wide student representative councils.</li>
+              </ul>
+            </div>
+            <div class="cv-date">Sep – Dec 2025</div>
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <h3>Teaching Experience</h3>
+          <div class="cv-row">
+            <div>
+              <div class="cv-inst">Mathematics Tutor, Jace Khan Academy</div>
+              <div class="cv-dept">Asan, Republic of Korea (private academy)</div>
+              <ul class="cv-list">
+                <li>Tutored middle school students in mathematics and later taught class lessons on high school level topics.</li>
+              </ul>
+            </div>
+            <div class="cv-date">Jul – Aug 2021</div>
           </div>
         </div>
 
@@ -681,7 +773,7 @@
         </div>
 
         <div style="margin-top:2rem">
-          <a class="pub-link" href="files/Minseok_Park_CV_26.11.17.pdf" target="_blank">↓ Download full CV (PDF)</a>
+          <a class="pub-link" href="files/Minseok_Park_CV_26.11.26.pdf" target="_blank">↓ Download full CV (PDF)</a>
         </div>
 
       </div>
@@ -703,19 +795,28 @@ const projects = {
   uav: {
     badge: '<span class="card-badge badge-review">Under Review · IEEE IoT-J</span>',
     title: 'Resilient UAV Navigation under Sensor Dropout',
-    meta: 'University of North Dakota · Mar 2026 – Present',
+    meta: 'University of North Dakota · Mar – Nov 2026',
     goal: 'Developed an auxiliary-learning-enhanced Decision Transformer for resilient UAV navigation under intermittent sensor dropout.',
     detail: 'Achieved 88% and 77% success rates at a 40% dropout probability for short and long dropout durations, compared with 33% and 19% for the standard Decision Transformer.',
     status: 'Under review at IEEE Internet of Things Journal.',
     chips: ['Decision Transformer', 'Offline RL', 'Auxiliary Learning', 'PyBullet', 'Sensor Dropout']
   },
+  seqrl: {
+    badge: '<span class="card-badge badge-progress">In Progress</span>',
+    title: 'Sequential Multi-Phase UAV Navigation via End-to-End RL',
+    meta: 'University of North Dakota · Mar 2026 – Present',
+    goal: 'To be updated',
+    detail: 'To be updated',
+    status: 'In progress.',
+    chips: ['Reinforcement Learning', 'PyBullet', 'Crazyflie (simulation)']
+  },
   eacnn: {
-    badge: '<span class="card-badge badge-accepted">Accepted · ASME IMECE 2026</span>',
+    badge: '<span class="card-badge badge-presented">Presented · ASME IMECE 2026</span>',
     title: 'Robust Fault Diagnosis of Rotating Machinery via Entropy-Augmented CNN',
     meta: 'University of North Dakota · Mar – May 2026',
     goal: 'Developed an entropy-augmented CNN framework with time-domain (multiscale sample entropy) and frequency-domain (Shannon spectral entropy) pipelines to diagnose shaft misalignment and rotor unbalance.',
     detail: 'In the time domain, Multiscale Sample Entropy (MSE) was extracted together with statistical descriptors and fed into a CNN classifier. In the frequency domain, power spectral density inputs were passed through a CNN, and the learned features were concatenated with Shannon Spectral Entropy (SSE) before final classification. Both pipelines achieved over 95% classification accuracy across three rotational speeds. Responsible for data preprocessing, model implementation, experimental evaluation, and manuscript drafting.',
-    status: 'Accepted at ASME International Mechanical Engineering Congress and Exposition (IMECE) 2026.',
+    status: 'Presented at ASME International Mechanical Engineering Congress and Exposition (IMECE) 2026.',
     chips: ['CNN', 'Multiscale Sample Entropy', 'Shannon Spectral Entropy', 'Signal Processing', 'PyTorch']
   },
   crazyflie: {
